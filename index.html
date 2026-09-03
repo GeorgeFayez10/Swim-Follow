@@ -23,19 +23,19 @@
             scroll-behavior: smooth;
         }
 
-        /* Hero Section & Deep Water Overlay */
+        /* ===== HERO SECTION WITH MAIN BACKGROUND ===== */
         .hero-section {
             min-height: 100vh;
             width: 100%;
-            background: linear-gradient(180deg, rgba(3, 8, 16, 0.75) 0%, rgba(3, 8, 16, 0.98) 100%), 
-                        url('https://images.unsplash.com/photo-1530549387789-4c1017266635?q=80&w=1920&auto=format&fit=crop') center/cover no-repeat;
+            background: linear-gradient(180deg, rgba(3, 8, 16, 0.65) 0%, rgba(3, 8, 16, 0.95) 100%), 
+                        url('https://images.unsplash.com/photo-1530549387789-4c1017266635?q=80&w=1920&auto=format&fit=crop') center/cover no-repeat fixed;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
             color: #ffffff;
-            padding: 60px 20px;
+            padding: 80px 20px;
             position: relative;
         }
 
@@ -58,8 +58,8 @@
 
         .main-title {
             font-family: 'Oswald', sans-serif;
-            font-size: clamp(2rem, 5vw, 3.2rem);
-            font-weight: 700;
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 800;
             text-transform: uppercase;
             letter-spacing: 2px;
             line-height: 1.15;
@@ -102,7 +102,7 @@
             line-height: 1.7;
             color: #94A3B8;
             margin-bottom: 36px;
-            background: rgba(10, 22, 40, 0.65);
+            background: rgba(10, 22, 40, 0.75);
             padding: 22px 30px;
             border-left: 4px solid #00D4FF;
             border-radius: 12px;
@@ -139,23 +139,15 @@
             background: linear-gradient(135deg, #00E5C0, #00D4FF);
         }
 
-        /* ===== LEVELS SECTION ===== */
-        .levels-section {
-            padding: 100px 20px;
-            max-width: 1280px;
-            margin: 0 auto;
-            position: relative;
-            z-index: 2;
-        }
-
+        /* ===== GENERAL SECTION STYLING ===== */
         .section-header {
             text-align: center;
-            margin-bottom: 70px;
+            margin-bottom: 60px;
         }
 
         .section-header h2 {
             font-family: 'Oswald', sans-serif;
-            font-size: clamp(2.3rem, 5vw, 3.8rem);
+            font-size: clamp(2.3rem, 5vw, 3.5rem);
             font-weight: 900;
             text-transform: uppercase;
             letter-spacing: 3px;
@@ -173,15 +165,30 @@
             text-transform: uppercase;
         }
 
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* ===== 1. LEVELS SECTION ===== */
+        .levels-section {
+            padding: 100px 20px;
+            width: 100%;
+            background: linear-gradient(180deg, rgba(3, 8, 16, 0.95) 0%, rgba(4, 12, 24, 0.92) 50%, rgba(3, 8, 16, 0.95) 100%),
+                        url('https://images.unsplash.com/photo-1519315901367-f34ff9154487?q=80&w=1920&auto=format&fit=crop') center/cover no-repeat fixed;
+            position: relative;
+        }
+
         .levels-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
             gap: 28px;
         }
 
-        /* Card Container Design */
         .level-card {
-            background: linear-gradient(145deg, rgba(13, 27, 46, 0.8), rgba(6, 14, 26, 0.9));
+            background: linear-gradient(145deg, rgba(13, 27, 46, 0.85), rgba(6, 14, 26, 0.95));
             border: 1px solid rgba(0, 212, 255, 0.12);
             border-radius: 20px;
             padding: 32px 28px;
@@ -231,7 +238,6 @@
             opacity: 1;
         }
 
-        /* Header Row: Level (Left) + Category (Right) */
         .card-header-row {
             display: flex;
             align-items: center;
@@ -253,7 +259,6 @@
             box-shadow: 0 0 15px rgba(0, 212, 255, 0.3);
         }
 
-        /* Unique Category Badges Design */
         .level-category-inline {
             font-family: 'Oswald', sans-serif;
             font-size: 0.8rem;
@@ -265,48 +270,12 @@
             border: 1px solid transparent;
         }
 
-        /* Colors for each category */
-        .cat-beginner {
-            color: #38BDF8;
-            background: rgba(56, 189, 248, 0.12);
-            border-color: rgba(56, 189, 248, 0.35);
-            box-shadow: 0 0 10px rgba(56, 189, 248, 0.15);
-        }
-
-        .cat-premid {
-            color: #34D399;
-            background: rgba(52, 211, 153, 0.12);
-            border-color: rgba(52, 211, 153, 0.35);
-            box-shadow: 0 0 10px rgba(52, 211, 153, 0.15);
-        }
-
-        .cat-intermediate {
-            color: #FBBF24;
-            background: rgba(251, 191, 36, 0.12);
-            border-color: rgba(251, 191, 36, 0.35);
-            box-shadow: 0 0 10px rgba(251, 191, 36, 0.15);
-        }
-
-        .cat-upper {
-            color: #FB923C;
-            background: rgba(251, 146, 60, 0.12);
-            border-color: rgba(251, 146, 60, 0.35);
-            box-shadow: 0 0 10px rgba(251, 146, 60, 0.15);
-        }
-
-        .cat-advanced {
-            color: #F43F5E;
-            background: rgba(244, 63, 94, 0.12);
-            border-color: rgba(244, 63, 94, 0.35);
-            box-shadow: 0 0 10px rgba(244, 63, 94, 0.15);
-        }
-
-        .cat-elite {
-            color: #A855F7;
-            background: rgba(168, 85, 247, 0.15);
-            border-color: rgba(168, 85, 247, 0.45);
-            box-shadow: 0 0 15px rgba(168, 85, 247, 0.3);
-        }
+        .cat-beginner { color: #38BDF8; background: rgba(56, 189, 248, 0.12); border-color: rgba(56, 189, 248, 0.35); }
+        .cat-premid { color: #34D399; background: rgba(52, 211, 153, 0.12); border-color: rgba(52, 211, 153, 0.35); }
+        .cat-intermediate { color: #FBBF24; background: rgba(251, 191, 36, 0.12); border-color: rgba(251, 191, 36, 0.35); }
+        .cat-upper { color: #FB923C; background: rgba(251, 146, 60, 0.12); border-color: rgba(251, 146, 60, 0.35); }
+        .cat-advanced { color: #F43F5E; background: rgba(244, 63, 94, 0.12); border-color: rgba(244, 63, 94, 0.35); }
+        .cat-elite { color: #A855F7; background: rgba(168, 85, 247, 0.15); border-color: rgba(168, 85, 247, 0.45); }
 
         .level-title {
             font-family: 'Oswald', sans-serif;
@@ -315,10 +284,8 @@
             color: #FFFFFF;
             margin-bottom: 16px;
             line-height: 1.25;
-            letter-spacing: 0.5px;
         }
 
-        /* Description List Formatting */
         .level-skills-list {
             list-style: none;
             display: flex;
@@ -346,7 +313,197 @@
             flex-shrink: 0;
         }
 
-        /* Footer Section */
+        /* ===== 2. BENEFITS SECTION ===== */
+        .benefits-section {
+            padding: 100px 20px;
+            width: 100%;
+            background: linear-gradient(180deg, rgba(3, 8, 16, 0.9) 0%, rgba(6, 18, 36, 0.92) 50%, rgba(3, 8, 16, 0.95) 100%),
+                        url('marcelo-uva-n2v3lTWy74Y-unsplash.jpg') center/cover no-repeat fixed;
+            position: relative;
+        }
+
+        .grid-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+        }
+
+        .info-card {
+            background: linear-gradient(145deg, rgba(13, 27, 46, 0.85), rgba(6, 14, 26, 0.92));
+            border: 1px solid rgba(0, 212, 255, 0.2);
+            border-radius: 20px;
+            padding: 32px 25px;
+            backdrop-filter: blur(16px);
+            transition: all 0.3s ease;
+        }
+
+        .info-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(0, 229, 192, 0.5);
+            box-shadow: 0 15px 35px rgba(0, 212, 255, 0.2);
+        }
+
+        .card-icon-svg {
+            width: 44px;
+            height: 44px;
+            margin-bottom: 16px;
+            display: block;
+            fill: none;
+            stroke: #00E5C0;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            filter: drop-shadow(0 0 8px rgba(0, 229, 192, 0.6));
+        }
+
+        .card-icon {
+            font-size: 2.5rem;
+            margin-bottom: 16px;
+            display: inline-block;
+        }
+
+        .info-card h3 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.5rem;
+            color: #FFFFFF;
+            margin-bottom: 12px;
+            letter-spacing: 1px;
+        }
+
+        .info-card p {
+            color: #94A3B8;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* ===== 3. AGE GROUPS SECTION ===== */
+        .age-section {
+            padding: 100px 20px;
+            width: 100%;
+            background: linear-gradient(180deg, rgba(3, 8, 16, 0.95) 0%, rgba(5, 14, 28, 0.9) 50%, rgba(3, 8, 16, 0.98) 100%),
+                        url('https://images.unsplash.com/photo-1560090995-019306d292f8?q=80&w=1920&auto=format&fit=crop') center/cover no-repeat fixed;
+            position: relative;
+        }
+
+        .age-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 24px;
+        }
+
+        .age-card {
+            background: rgba(10, 22, 40, 0.75);
+            border-top: 4px solid #00D4FF;
+            border-radius: 16px;
+            padding: 30px 24px;
+            backdrop-filter: blur(14px);
+            border-left: 1px solid rgba(0, 212, 255, 0.15);
+            border-right: 1px solid rgba(0, 212, 255, 0.15);
+            border-bottom: 1px solid rgba(0, 212, 255, 0.15);
+            transition: all 0.3s ease;
+        }
+
+        .age-card:hover {
+            transform: translateY(-6px);
+            border-top-color: #00E5C0;
+            background: rgba(13, 27, 46, 0.85);
+            box-shadow: 0 10px 25px rgba(0, 229, 192, 0.2);
+        }
+
+        .age-badge {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: #00E5C0;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+        }
+
+        .age-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #FFFFFF;
+            margin-bottom: 12px;
+        }
+
+        .age-card p {
+            color: #94A3B8;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* ===== 4. MOTIVATIONAL GALLERY SECTION ===== */
+        .gallery-section {
+            padding: 100px 20px;
+            width: 100%;
+            background: linear-gradient(180deg, rgba(3, 8, 16, 0.92) 0%, rgba(2, 10, 22, 0.95) 100%),
+                        url('https://images.unsplash.com/photo-1560088939-ddaf4d3e0d0b?q=80&w=735&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') center/cover no-repeat fixed;
+            position: relative;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 28px;
+        }
+
+        .gallery-card {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            height: 380px;
+            border: 1px solid rgba(0, 212, 255, 0.2);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            transition: all 0.4s ease;
+        }
+
+        .gallery-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center top;
+            transition: transform 0.6s ease;
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(0, 0, 0, 0.1) 0%, rgba(3, 8, 16, 0.92) 85%);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 30px 24px;
+            transition: all 0.4s ease;
+        }
+
+        .gallery-card:hover img {
+            transform: scale(1.08);
+        }
+
+        .gallery-card:hover {
+            border-color: #00E5C0;
+            box-shadow: 0 15px 35px rgba(0, 212, 255, 0.3);
+        }
+
+        .gallery-quote {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: #FFFFFF;
+            line-height: 1.35;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .gallery-author {
+            color: #00E5C0;
+            font-size: 0.9rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        /* ===== FOOTER SECTION ===== */
         footer {
             background: #02050B;
             border-top: 1px solid rgba(0, 212, 255, 0.12);
@@ -375,7 +532,6 @@
             text-shadow: 0 0 20px rgba(0, 229, 192, 0.4);
         }
 
-        /* Social Icons Style (Logo Only) */
         .contact-links {
             display: flex;
             gap: 20px;
@@ -435,7 +591,6 @@
             width: 100%;
         }
 
-        /* Keyframe Animations */
         @keyframes fadeInDown {
             from { opacity: 0; transform: translateY(-30px); }
             to { opacity: 1; transform: translateY(0); }
@@ -460,6 +615,7 @@
 </head>
 <body>
 
+    <!-- MAIN HERO SECTION -->
     <div class="hero-section">
         <div class="content-box">
             <h1 class="main-title">CONGRATULATIONS! YOU'RE MOVING TO THE NEXT LEVEL</h1>
@@ -477,170 +633,310 @@
         </div>
     </div>
 
-    <!-- Levels Roadmap Section -->
-    <section class="levels-section">
-        <div class="section-header">
-            <h2>DEVELOPMENT ROADMAP</h2>
-            <p>From Fundamental Mastery to Elite Performance</p>
-        </div>
-
-        <div class="levels-grid">
-            
-            <!-- Level 1 -->
-            <div class="level-card" data-level="01">
-                <div>
-                    <div class="card-header-row">
-                        <span class="level-badge">LEVEL 1</span>
-                        <span class="level-category-inline cat-beginner">BEGINNER</span>
-                    </div>
-                    <h3 class="level-title">Water Orientation & Floating</h3>
-                    <ul class="level-skills-list">
-                        <li>Back floating technique</li>
-                        <li>Front floating technique</li>
-                        <li>Deep water treading & safety</li>
-                        <li>Underwater bubbles & breath control</li>
-                    </ul>
-                </div>
+    <!-- 1. LEVELS ROADMAP SECTION -->
+    <section class="levels-section" id="levels">
+        <div class="container">
+            <div class="section-header">
+                <h2>DEVELOPMENT ROADMAP</h2>
+                <p>From Fundamental Mastery to Elite Performance</p>
             </div>
 
-            <!-- Level 2 -->
-            <div class="level-card" data-level="02">
-                <div>
-                    <div class="card-header-row">
-                        <span class="level-badge">LEVEL 2</span>
-                        <span class="level-category-inline cat-beginner">BEGINNER</span>
+            <div class="levels-grid">
+                
+                <!-- Level 1 -->
+                <div class="level-card" data-level="01">
+                    <div>
+                        <div class="card-header-row">
+                            <span class="level-badge">LEVEL 1</span>
+                            <span class="level-category-inline cat-beginner">BEGINNER</span>
+                        </div>
+                        <h3 class="level-title">Water Orientation & Floating</h3>
+                        <ul class="level-skills-list">
+                            <li>Back floating technique</li>
+                            <li>Front floating technique</li>
+                            <li>Deep water treading & safety</li>
+                            <li>Underwater bubbles & breath control</li>
+                        </ul>
                     </div>
-                    <h3 class="level-title">Wall Launches & Streamlines</h3>
-                    <ul class="level-skills-list">
-                        <li>Correct wall push-off positioning</li>
-                        <li>Freestyle streamline gliding</li>
-                        <li>Backstroke streamline launches</li>
-                        <li>Hydrodynamic body alignment</li>
-                    </ul>
                 </div>
-            </div>
 
-            <!-- Level 3 -->
-            <div class="level-card" data-level="03">
-                <div>
-                    <div class="card-header-row">
-                        <span class="level-badge">LEVEL 3</span>
-                        <span class="level-category-inline cat-premid">PRE-MID</span>
+                <!-- Level 2 -->
+                <div class="level-card" data-level="02">
+                    <div>
+                        <div class="card-header-row">
+                            <span class="level-badge">LEVEL 2</span>
+                            <span class="level-category-inline cat-beginner">BEGINNER</span>
+                        </div>
+                        <h3 class="level-title">Wall Launches & Streamlines</h3>
+                        <ul class="level-skills-list">
+                            <li>Correct wall push-off positioning</li>
+                            <li>Freestyle streamline gliding</li>
+                            <li>Backstroke streamline launches</li>
+                            <li>Hydrodynamic body alignment</li>
+                        </ul>
                     </div>
-                    <h3 class="level-title">Kicking Efficiency & Sculling</h3>
-                    <ul class="level-skills-list">
-                        <li>High-efficiency Freestyle flutter kick</li>
-                        <li>Powerful Backstroke flutter kick</li>
-                        <li>Sculling mechanics & feel for the water</li>
-                    </ul>
                 </div>
-            </div>
 
-            <!-- Level 4 -->
-            <div class="level-card" data-level="04">
-                <div>
-                    <div class="card-header-row">
-                        <span class="level-badge">LEVEL 4</span>
-                        <span class="level-category-inline cat-premid">PRE-MID</span>
+                <!-- Level 3 -->
+                <div class="level-card" data-level="03">
+                    <div>
+                        <div class="card-header-row">
+                            <span class="level-badge">LEVEL 3</span>
+                            <span class="level-category-inline cat-premid">PRE-MID</span>
+                        </div>
+                        <h3 class="level-title">Kicking Efficiency & Sculling</h3>
+                        <ul class="level-skills-list">
+                            <li>High-efficiency Freestyle flutter kick</li>
+                            <li>Powerful Backstroke flutter kick</li>
+                            <li>Sculling mechanics & feel for the water</li>
+                        </ul>
                     </div>
-                    <h3 class="level-title">Stroke Integration & Breathing</h3>
-                    <ul class="level-skills-list">
-                        <li>Freestyle arm catch & kick integration</li>
-                        <li>Backstroke arm pull & kick synchronization</li>
-                        <li>Cadence & rhythm control</li>
-                        <li>Bilateral side breathing mastery</li>
-                    </ul>
                 </div>
-            </div>
 
-            <!-- Level 5 -->
-            <div class="level-card" data-level="05">
-                <div>
-                    <div class="card-header-row">
-                        <span class="level-badge">LEVEL 5</span>
-                        <span class="level-category-inline cat-intermediate">INTERMEDIATE</span>
+                <!-- Level 4 -->
+                <div class="level-card" data-level="04">
+                    <div>
+                        <div class="card-header-row">
+                            <span class="level-badge">LEVEL 4</span>
+                            <span class="level-category-inline cat-premid">PRE-MID</span>
+                        </div>
+                        <h3 class="level-title">Stroke Integration & Breathing</h3>
+                        <ul class="level-skills-list">
+                            <li>Freestyle arm catch & kick integration</li>
+                            <li>Backstroke arm pull & kick synchronization</li>
+                            <li>Cadence & rhythm control</li>
+                            <li>Bilateral side breathing mastery</li>
+                        </ul>
                     </div>
-                    <h3 class="level-title">Technical Development & Gear</h3>
-                    <ul class="level-skills-list">
-                        <li>Breaststroke whip kick mechanics</li>
-                        <li>Dolphin undulation body movement</li>
-                        <li>Freestyle & Backstroke technique reinforcement</li>
-                        <li>Advanced fin & center snorkel drills</li>
-                    </ul>
                 </div>
-            </div>
 
-            <!-- Level 6 -->
-            <div class="level-card" data-level="06">
-                <div>
-                    <div class="card-header-row">
-                        <span class="level-badge">LEVEL 6</span>
-                        <span class="level-category-inline cat-intermediate">INTERMEDIATE</span>
+                <!-- Level 5 -->
+                <div class="level-card" data-level="05">
+                    <div>
+                        <div class="card-header-row">
+                            <span class="level-badge">LEVEL 5</span>
+                            <span class="level-category-inline cat-intermediate">INTERMEDIATE</span>
+                        </div>
+                        <h3 class="level-title">Technical Development & Gear</h3>
+                        <ul class="level-skills-list">
+                            <li>Breaststroke whip kick mechanics</li>
+                            <li>Dolphin undulation body movement</li>
+                            <li>Freestyle & Backstroke technique reinforcement</li>
+                            <li>Advanced fin & center snorkel drills</li>
+                        </ul>
                     </div>
-                    <h3 class="level-title">Full Stroke Mastery & Turns</h3>
-                    <ul class="level-skills-list">
-                        <li>Complete Butterfly stroke execution</li>
-                        <li>Complete Breaststroke execution</li>
-                        <li>Performance, pacing & efficiency tuning</li>
-                        <li>All 4 stroke flip/open turns & block starts</li>
-                    </ul>
                 </div>
-            </div>
 
-            <!-- Level 7 -->
-            <div class="level-card" data-level="07">
-                <div>
-                    <div class="card-header-row">
-                        <span class="level-badge">LEVEL 7</span>
-                        <span class="level-category-inline cat-upper">UPPER-INTERMEDIATE</span>
+                <!-- Level 6 -->
+                <div class="level-card" data-level="06">
+                    <div>
+                        <div class="card-header-row">
+                            <span class="level-badge">LEVEL 6</span>
+                            <span class="level-category-inline cat-intermediate">INTERMEDIATE</span>
+                        </div>
+                        <h3 class="level-title">Full Stroke Mastery & Turns</h3>
+                        <ul class="level-skills-list">
+                            <li>Complete Butterfly stroke execution</li>
+                            <li>Complete Breaststroke execution</li>
+                            <li>Performance, pacing & efficiency tuning</li>
+                            <li>All 4 stroke flip/open turns & block starts</li>
+                        </ul>
                     </div>
-                    <h3 class="level-title">Speed, Endurance & Equipment</h3>
-                    <ul class="level-skills-list">
-                        <li>Speed & stamina building</li>
-                        <li>Advanced fin conditioning drills (4 strokes)</li>
-                        <li>Introduction to Medley training</li>
-                    </ul>
                 </div>
-            </div>
 
-            <!-- Level 8 -->
-            <div class="level-card" data-level="08">
-                <div>
-                    <div class="card-header-row">
-                        <span class="level-badge">LEVEL 8</span>
-                        <span class="level-category-inline cat-advanced">ADVANCED</span>
+                <!-- Level 7 -->
+                <div class="level-card" data-level="07">
+                    <div>
+                        <div class="card-header-row">
+                            <span class="level-badge">LEVEL 7</span>
+                            <span class="level-category-inline cat-upper">UPPER-INTERMEDIATE</span>
+                        </div>
+                        <h3 class="level-title">Speed, Endurance & Equipment</h3>
+                        <ul class="level-skills-list">
+                            <li>Speed & stamina building</li>
+                            <li>Advanced fin conditioning drills (4 strokes)</li>
+                            <li>Introduction to Medley training</li>
+                        </ul>
                     </div>
-                    <h3 class="level-title">Individual Medley & Time Trials</h3>
-                    <ul class="level-skills-list">
-                        <li>Full Individual Medley (IM) execution</li>
-                        <li>Butterfly & Breaststroke stroke perfection</li>
-                        <li>Individual stroke time measurement</li>
-                        <li>Performance tracking & logging</li>
-                    </ul>
                 </div>
-            </div>
 
-            <!-- Level 9 -->
-            <div class="level-card" data-level="09">
-                <div>
-                    <div class="card-header-row">
-                        <span class="level-badge">LEVEL 9</span>
-                        <span class="level-category-inline cat-elite">ELITE ATHLETE</span>
+                <!-- Level 8 -->
+                <div class="level-card" data-level="08">
+                    <div>
+                        <div class="card-header-row">
+                            <span class="level-badge">LEVEL 8</span>
+                            <span class="level-category-inline cat-advanced">ADVANCED</span>
+                        </div>
+                        <h3 class="level-title">Individual Medley & Time Trials</h3>
+                        <ul class="level-skills-list">
+                            <li>Full Individual Medley (IM) execution</li>
+                            <li>Butterfly & Breaststroke stroke perfection</li>
+                            <li>Individual stroke time measurement</li>
+                            <li>Performance tracking & logging</li>
+                        </ul>
                     </div>
-                    <h3 class="level-title">Competitive Aerobic Capacity</h3>
-                    <ul class="level-skills-list">
-                        <li>Sprint speed & aerobic capacity building</li>
-                        <li>Distance endurance across all 4 strokes</li>
-                        <li>Official Individual Medley benchmarking</li>
-                        <li>Official competition phase preparation</li>
-                    </ul>
                 </div>
-            </div>
 
+                <!-- Level 9 -->
+                <div class="level-card" data-level="09">
+                    <div>
+                        <div class="card-header-row">
+                            <span class="level-badge">LEVEL 9</span>
+                            <span class="level-category-inline cat-elite">ELITE ATHLETE</span>
+                        </div>
+                        <h3 class="level-title">Competitive Aerobic Capacity</h3>
+                        <ul class="level-skills-list">
+                            <li>Sprint speed & aerobic capacity building</li>
+                            <li>Distance endurance across all 4 strokes</li>
+                            <li>Official Individual Medley benchmarking</li>
+                            <li>Official competition phase preparation</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
         </div>
     </section>
 
-    <!-- Footer / Contact Section -->
+<!-- 2. BENEFITS OF SWIMMING SECTION -->
+<section class="benefits-section">
+    <div class="container">
+        <div class="section-header">
+            <h2>WHY SWIMMING?</h2>
+            <p>Core Benefits for Body & Mind</p>
+        </div>
+
+        <div class="grid-cards">
+            <!-- 1. Heart (Anatomical) -->
+            <div class="info-card">
+                <svg class="card-icon-svg" viewBox="0 0 24 24">
+                    <path d="M8.5 2C7.5 2 6.5 2.8 6.5 4V5C5.5 5.5 4.8 6.5 4.5 7.8C4 10 5.2 12.5 6 14C7 16 8.5 18 10.5 20C11.3 20.8 12.7 20.8 13.5 20C16 17.5 19.5 13.5 19.5 9.5C19.5 7 18 5 16 5C15 5 14.2 5.5 13.5 6.2C13 5 11.8 4 10.5 4V4C10.5 2.8 9.5 2 8.5 2Z" />
+                    <path d="M8.5 2V5" />
+                    <path d="M11 2.5V4.5" />
+                    <path d="M14.5 3C14.5 3 13.5 4.5 13.5 6" />
+                    <path d="M10 10C11 11.5 13 13 15 13.5" />
+                </svg>
+                <h3>Cardiovascular Health</h3>
+                <p>Swimming strengthens the heart, improves lung capacity, and enhances overall blood circulation with every stroke.</p>
+            </div>
+
+            <!-- 2. Full-Body Workout (Muscle Flex) -->
+            <div class="info-card">
+                <svg class="card-icon-svg" viewBox="0 0 24 24">
+                    <path d="M6 16.5C4 16.5 2.5 15 2.5 13C2.5 11.5 3.5 10.2 5 9.7C5.3 7 7.5 5 10.2 5C12.5 5 14.5 6.5 15.2 8.7C15.8 8.4 16.4 8.2 17 8.2C19.2 8.2 21 10 21 12.2C21 13.2 20.6 14.1 20 14.8" />
+                    <path d="M6 16.5L9 21.5H16L18 16.5" />
+                    <path d="M10 12L12 10L14 12" />
+                </svg>
+                <h3>Full-Body Workout</h3>
+                <p>Engages almost every major muscle group simultaneously, building lean muscle mass, stamina, and physical endurance.</p>
+            </div>
+
+            <!-- 3. Low-Impact & Joints (Human Joint / Motion) -->
+            <div class="info-card">
+                <svg class="card-icon-svg" viewBox="0 0 24 24">
+                    <circle cx="12" cy="5" r="2.5" />
+                    <path d="M12 7.5V13.5L9 16.5L6 21" />
+                    <path d="M12 13.5L15 16.5L18 21" />
+                    <path d="M6 10H18" />
+                </svg>
+                <h3>Low-Impact & Gentle on Joints</h3>
+                <p>Water buoyancy reduces body weight stress by up to 90%, making it safe for joint recovery, rehabilitation, and long-term fitness.</p>
+            </div>
+
+            <!-- 4. Mental Clarity (Brain / Mind) -->
+            <div class="info-card">
+                <svg class="card-icon-svg" viewBox="0 0 24 24">
+                    <path d="M9.5 3.5C7 3.5 5 5.5 5 8C5 9.3 5.5 10.5 6.4 11.4C5 12.5 4 14.2 4 16.2C4 19.4 6.6 22 9.8 22H10" />
+                    <path d="M14.5 3.5C17 3.5 19 5.5 19 8C19 9.3 18.5 10.5 17.6 11.4C19 12.5 20 14.2 20 16.2C20 19.4 17.4 22 14.2 22H14" />
+                    <path d="M12 3V22" />
+                    <path d="M8 8H9.5" />
+                    <path d="M14.5 8H16" />
+                    <path d="M7 15H9.5" />
+                    <path d="M14.5 15H17" />
+                </svg>
+                <h3>Mental Clarity & Stress Relief</h3>
+                <p>Rhythmic breathing underwater triggers endorphins, helping reduce stress, anxiety, and improving overall focus.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- 3. AGE GROUPS SECTION -->
+    <section class="age-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>SUITABLE AGE GROUPS</h2>
+                <p>A Lifelong Sport for Every Stage of Life</p>
+            </div>
+
+            <div class="age-grid">
+                <div class="age-card">
+                    <div class="age-badge">AGES 3 - 6</div>
+                    <div class="age-title">Early Water Mastery</div>
+                    <p>Focuses on water safety, comfort, confidence, basic floating, and building essential motor coordination in a fun environment.</p>
+                </div>
+
+                <div class="age-card">
+                    <div class="age-badge">AGES 7 - 12</div>
+                    <div class="age-title">Technique & Skill Development</div>
+                    <p>Ideal age for mastering core stroke mechanics, discipline, endurance, and transitioning into structured competitive training.</p>
+                </div>
+
+                <div class="age-card">
+                    <div class="age-badge">AGES 13 - 18</div>
+                    <div class="age-title">Competitive & Performance</div>
+                    <p>Targeted training for speed, aerobic capacity, tactical race pacing, and preparing for official competitions and time trials.</p>
+                </div>
+
+                <div class="age-card">
+                    <div class="age-badge">AGES 19+ & ADULTS</div>
+                    <div class="age-title">Fitness, Masters & Health</div>
+                    <p>Tailored programs for adults aiming to improve overall fitness, master technique, alleviate joint pain, or compete in Masters events.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. MOTIVATIONAL GALLERY SECTION (CDN DIRECT RELIABLE IMAGES) -->
+    <section class="gallery-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>CHAMPION MINDSET</h2>
+                <p>Inspiration for the Lane</p>
+            </div>
+
+            <div class="gallery-grid">
+                <!-- Card 1: Michael Phelps -->
+                <div class="gallery-card">
+                    <img src="https://i.pinimg.com/1200x/18/9c/c6/189cc690186191047dcd930a8d870d2e.jpg" alt="Michael Phelps Style Swimmer">
+                    <div class="gallery-overlay">
+                        <div class="gallery-quote">"You can't put a limit on anything. The more you dream, the farther you get."</div>
+                        <div class="gallery-author">— Michael Phelps (28-Time Olympic Medalist)</div>
+                    </div>
+                </div>
+
+                <!-- Card 2: Olympic Swimmer Racing -->
+                <div class="gallery-card">
+                    <img src="https://i.pinimg.com/736x/c8/02/0a/c8020a127eebaa7ca408dd17effb18bd.jpg" alt="Swimmer Racing in Lane">
+                    <div class="gallery-overlay">
+                        <div class="gallery-quote">"The more you believe in the faster you're going to get."</div>
+                        <div class="gallery-author">— Adam Peaty</div>
+                    </div>
+                </div>
+
+                <!-- Card 3: Caeleb Dressel -->
+                <div class="gallery-card">
+                    <img src="https://i.pinimg.com/1200x/c7/9c/ba/c79cba943aa0de0db7de0bca2bed100c.jpg" alt="Caeleb Dressel Block Dive Launch">
+                    <div class="gallery-overlay">
+                        <div class="gallery-quote">"Focus on the small details every single day. That's what creates big achievements."</div>
+                        <div class="gallery-author">— Caeleb Dressel (Olympic Gold Medalist)</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. FOOTER SECTION -->
     <footer>
         <div class="footer-content">
             <div class="footer-motto">
@@ -648,12 +944,10 @@
             </div>
 
             <div class="contact-links">
-                <!-- WhatsApp Logo Only -->
                 <a href="https://wa.me/201225571679" target="_blank" class="social-icon-btn whatsapp-icon" title="WhatsApp">
                     <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.198-.198.347-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
                 </a>
 
-                <!-- Facebook Logo Only -->
                 <a href="https://facebook.com" target="_blank" class="social-icon-btn facebook-icon" title="Facebook">
                     <svg viewBox="0 0 24 24"><path d="M9 8H6v4h3v12h5V12h3.642L18 8h-4V6.333C14 5.37 14.5 5 15.5 5H18V0h-3.808C10.5 0 9 1.5 9 4.5V8z"/></svg>
                 </a>
