@@ -486,7 +486,8 @@ const firebaseConfig = {
   measurementId: "G-DQB4NED6J2"
 };
 
-const isConfigured = firebaseConfig.apiKey && firebaseConfig.apiKey !== "YOUR_API_KEY";
+  const isConfigured = firebaseConfig.apiKey && firebaseConfig.apiKey !== "YOUR_API_KEY";
+
   if (isConfigured) {
     try {
       const app = initializeApp(firebaseConfig);
@@ -1040,17 +1041,28 @@ const isConfigured = firebaseConfig.apiKey && firebaseConfig.apiKey !== "YOUR_AP
     overlay.style.display = 'none';
   });
 
-  // Keep the UI in sync with real auth state (survives refresh, works across tabs).
-  if (window.fbReady) {
-    window.fbOnAuthChange((user) => {
-      if (user) {
-        enterEditor();
-      } else {
-        editorView.style.display = 'none';
-        loginView.style.display = 'block';
-      }
-    });
-    loginNote.textContent = '🔒 Connected to Firebase — sign-in is real and secured by Firebase Authentication.';
+    // Keep the UI in sync with real auth state (survives refresh, works across tabs).
+  // NOTE: the Firebase setup lives in a <script type="module"> above, which loads
+  // asynchronously and can finish AFTER this plain <script> has already run.
+  // So we wait for the page to fully load before checking window.fbReady,
+  // otherwise this whole block silently gets skipped and login appears to do nothing.
+  function wireUpAuthListener(){
+    if (window.fbReady) {
+      window.fbOnAuthChange((user) => {
+        if (user) {
+          enterEditor();
+        } else {
+          editorView.style.display = 'none';
+          loginView.style.display = 'block';
+        }
+      });
+      loginNote.textContent = '🔒 Connected to Firebase — sign-in is real and secured by Firebase Authentication.';
+    }
+  }
+  if (document.readyState === 'complete') {
+    wireUpAuthListener();
+  } else {
+    window.addEventListener('load', wireUpAuthListener);
   }
 
   function populateSwimmerSelect(){
