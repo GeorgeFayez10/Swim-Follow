@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
@@ -19,6 +20,8 @@
     --text-muted: #8993a6;
     --text-metal: #aab4c4;
     --crimson: #ff2f6d;
+    --vip-gold: #ffd166;
+    --vip-gold-soft: rgba(255, 209, 102, 0.35);
     --radius-lg: 14px;
     --radius-md: 8px;
     --shadow-soft: 0 12px 34px -12px rgba(0, 0, 0, 0.65);
@@ -104,7 +107,6 @@
 
   .wrap { position: relative; z-index: 1; max-width: 900px; margin: 0 auto; padding: 0 20px 60px; }
 
-  /* ================= HEADER ================= */
   header {
     display: flex; align-items: center; justify-content: space-between;
     padding: 24px 0; border-bottom: 1px solid var(--card-border);
@@ -144,7 +146,6 @@
   }
   .lang-toggle-btn:hover { background: rgba(0, 217, 255, 0.1); box-shadow: var(--glow-cyan); }
 
-  /* ================= HERO ================= */
   .hero { padding: 52px 0 36px; text-align: center; }
   .hero-tag {
     display: inline-flex; align-items: center; gap: 8px; padding: 5px 16px; border-radius: 3px;
@@ -160,7 +161,6 @@
   }
   .hero p { max-width: 580px; margin: 0 auto; font-size: 15px; color: var(--text-muted); }
 
-  /* Lookup Box */
   .lookup {
     margin: 30px auto 0; display: flex; gap: 8px; max-width: 480px;
     background: var(--card-bg); padding: 6px; border-radius: var(--radius-md);
@@ -191,7 +191,6 @@
   .lookup button:hover { background: var(--neon-green); box-shadow: 0 0 20px rgba(174, 255, 0, 0.45); transform: translateY(-1px); }
   .error-msg { margin-top: 14px; color: var(--crimson); font-size: 13.5px; display: none; }
 
-  /* ================= RESULT ================= */
   #result { display: none; padding-top: 40px; animation: fadeIn 0.4s ease; }
   @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
 
@@ -235,7 +234,6 @@
   .level-badge .lbl { font-size: 10.5px; color: var(--text-muted); letter-spacing: 1px; font-family: 'Rajdhani', sans-serif; font-weight: 600; }
   .level-badge .val { font-size: 18px; font-weight: 800; color: var(--neon-cyan); margin-top: 3px; font-family: 'Rajdhani', 'Cairo', sans-serif; }
 
-  /* Stats Grid */
   .stats-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 20px; }
   .stat-box {
     background: var(--card-bg); border: 1px solid var(--card-border);
@@ -245,7 +243,6 @@
   .stat-box .lbl { font-size: 10.5px; color: var(--text-muted); margin-bottom: 5px; letter-spacing: 0.8px; font-family: 'Rajdhani', sans-serif; font-weight: 600; }
   .stat-box .val { font-size: 18px; font-weight: 700; color: var(--text-main); font-family: 'Rajdhani', 'Cairo', sans-serif; }
 
-  /* Card Blocks */
   .panel-block {
     background: var(--card-bg); border: 1px solid var(--card-border);
     border-radius: var(--radius-lg); padding: 24px; margin-bottom: 20px;
@@ -262,7 +259,6 @@
     box-shadow: 0 0 8px var(--neon-green);
   }
 
-  /* Skills */
   .skills-summary { display: flex; align-items: center; gap: 26px; margin-bottom: 20px; padding-bottom: 18px; border-bottom: 1px solid var(--card-border); flex-wrap: wrap; }
   .skills-summary-text { font-size: 13.5px; color: var(--text-muted); max-width: 340px; }
   .skills-summary-text strong { color: var(--neon-cyan); }
@@ -284,20 +280,11 @@
   .skill-bar-fill { height: 100%; border-radius: 2px; background: linear-gradient(90deg, var(--neon-cyan), var(--neon-green)); box-shadow: 0 0 8px rgba(0, 217, 255, 0.4); transition: width 0.6s ease; }
   .skill-bar-row .s-val { font-size: 13px; font-weight: 700; color: var(--neon-cyan); text-align: left; font-family: 'Rajdhani', sans-serif; }
 
-  /* Level progress */
-  .level-progress { margin-top: 14px; }
-  .level-progress .lp-top { display: flex; justify-content: space-between; font-size: 11.5px; color: var(--text-muted); margin-bottom: 6px; font-family: 'Rajdhani', sans-serif; letter-spacing: 0.4px; }
-  .level-progress .lp-top strong { color: var(--neon-green); }
-  .level-progress .lp-track { height: 8px; border-radius: 4px; background: rgba(255,255,255,0.05); overflow: hidden; border: 1px solid var(--card-border); }
-  .level-progress .lp-fill { height: 100%; border-radius: 4px; background: linear-gradient(90deg, var(--neon-cyan), var(--neon-green)); box-shadow: 0 0 10px rgba(174,255,0,0.35); transition: width 0.8s ease; }
-
-  /* PB delta badges */
   .pb-delta { display: inline-flex; align-items: center; gap: 3px; font-size: 11px; font-weight: 700; margin-top: 6px; font-family: 'Rajdhani', sans-serif; }
   .pb-delta.up { color: var(--neon-green); }
   .pb-delta.down { color: var(--crimson); }
   .pb-prev { font-size: 10.5px; color: var(--text-muted); margin-top: 2px; text-decoration: line-through; opacity: 0.7; }
 
-  /* Share button */
   .share-btn {
     display: inline-flex; align-items: center; gap: 8px; margin-top: 6px;
     background: transparent; border: 1px solid var(--neon-green-soft); color: var(--neon-green);
@@ -305,9 +292,43 @@
     font-family: 'Rajdhani', 'Cairo', sans-serif; letter-spacing: 0.4px; transition: all 0.2s ease;
   }
   .share-btn:hover { background: rgba(174,255,0,0.08); box-shadow: var(--glow-green); }
-  .share-row { display: flex; justify-content: flex-end; margin-top: -6px; margin-bottom: 18px; }
+  .share-row { display: flex; justify-content: flex-end; gap: 16px; flex-wrap: wrap; margin-top: 18px; margin-bottom: 18px; }
 
-  /* Skeleton loading */
+  .health-btn {
+    position: relative;
+    border: 1px solid var(--vip-gold-soft);
+    color: var(--vip-gold);
+    background: linear-gradient(135deg, rgba(255,209,102,0.10), rgba(0,217,255,0.06));
+    padding-inline-end: 22px;
+    overflow: visible;
+    animation: vipPulse 2.6s ease-in-out infinite;
+  }
+  .health-btn:hover {
+    background: linear-gradient(135deg, rgba(255,209,102,0.2), rgba(0,217,255,0.12));
+    box-shadow: 0 0 24px rgba(255,209,102,0.4);
+    border-color: var(--vip-gold);
+  }
+  .health-btn::after {
+    content: "VIP";
+    position: absolute; top: -10px; inset-inline-end: -8px;
+    background: linear-gradient(135deg, #ffe29a, #ffb703);
+    color: #241a00; font-size: 9.5px; font-weight: 900; letter-spacing: 0.6px;
+    padding: 2px 7px; border-radius: 20px;
+    box-shadow: 0 0 12px rgba(255, 183, 3, 0.7), 0 0 0 2px var(--bg-carbon);
+    font-family: 'Rajdhani', sans-serif;
+  }
+  @keyframes vipPulse {
+    0%, 100% { box-shadow: 0 0 0 rgba(255,209,102,0); }
+    50% { box-shadow: 0 0 16px rgba(255,209,102,0.28); }
+  }
+  @media (prefers-reduced-motion: reduce) { .health-btn { animation: none; } }
+  .vip-pill {
+    display: inline-flex; align-items: center; gap: 4px; font-size: 10px; font-weight: 800;
+    letter-spacing: 0.6px; padding: 2px 8px; border-radius: 20px; margin-inline-start: 8px;
+    background: rgba(174,255,0,0.1); border: 1px solid rgba(174,255,0,0.4); color: var(--neon-green);
+    vertical-align: middle;
+  }
+
   .skeleton-block { display: none; }
   .skeleton-block.active { display: block; }
   .sk-row { background: var(--card-bg); border: 1px solid var(--card-border); border-radius: var(--radius-lg); margin-bottom: 20px; padding: 22px; overflow: hidden; position: relative; }
@@ -324,7 +345,6 @@
   .sk-head { display: flex; gap: 16px; align-items: center; margin-bottom: 4px; }
   .sk-head .sk-lines { flex: 1; }
 
-  /* Grid 2 Column */
   .grid-two { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 20px; }
   .grid-two .panel {
     background: var(--card-bg); border: 1px solid var(--card-border);
@@ -341,7 +361,6 @@
   .panel.weakness li::before { content: "▹"; position: absolute; right: 0; color: var(--crimson); font-weight: 700; }
   html[dir="ltr"] .panel.weakness li::before { right: auto; left: 0; }
 
-  /* Personal Bests Modern Cards */
   .pb-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 12px; }
   .pb-card {
     background: linear-gradient(135deg, rgba(0,217,255,0.05) 0%, rgba(255,255,255,0.01) 100%);
@@ -359,7 +378,6 @@
   .pb-event { font-size: 11.5px; color: var(--text-muted); font-weight: 600; }
   .pb-time { font-size: 21px; font-weight: 800; color: var(--neon-green); font-family: 'Rajdhani', 'Cairo', sans-serif; margin-top: 4px; letter-spacing: 0.5px; text-shadow: 0 0 12px rgba(174, 255, 0, 0.3); }
 
-  /* Mission Row */
   .mission-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 20px; }
   .mission-row .panel {
     background: var(--card-bg); border: 1px solid var(--card-border);
@@ -371,7 +389,6 @@
   .mission-row .panel.next { border-color: rgba(174, 255, 0, 0.18); }
   .mission-row .panel.next .tag { color: var(--neon-green); }
 
-  /* Progress History — horizontal milestone track */
   .milestone-track {
     display: flex; align-items: flex-start; gap: 0; overflow-x: auto; overflow-y: hidden;
     padding: 30px 6px 14px; margin: 6px -6px 0; scrollbar-width: thin;
@@ -416,7 +433,6 @@
     border: 1px solid rgba(174,255,0,0.3); border-radius: 20px; padding: 5px 14px; font-size: 12.5px;
   }
 
-  /* Glassmorphic Notes & Items */
   .note-item {
     background: rgba(255, 255, 255, 0.015); border: 1px solid var(--card-border);
     border-inline-start: 2px solid var(--neon-cyan);
@@ -425,7 +441,6 @@
   .note-item:last-child { margin-bottom: 0; }
   .note-date { color: var(--neon-cyan); font-size: 11px; font-weight: 700; margin-bottom: 2px; font-family: 'Rajdhani', sans-serif; letter-spacing: 0.5px; }
 
-  /* Videos */
   .video-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 12px; }
   .video-card {
     background: rgba(255,255,255,0.02); border: 1px solid var(--card-border);
@@ -441,7 +456,6 @@
   footer { border-top: 1px solid var(--card-border); padding: 32px 0; text-align: center; font-size: 12.5px; color: var(--text-muted); }
   footer strong { color: var(--neon-cyan); }
 
-  /* Modal Overlay Dashboard */
   .modal-overlay {
     display: none; position: fixed; inset: 0; background: rgba(3, 5, 10, 0.88);
     z-index: 100; align-items: flex-start; justify-content: center; padding: 24px 14px; overflow-y: auto;
@@ -455,10 +469,131 @@
   .modal-panel::after { content: ""; position: absolute; bottom: -1px; inset-inline-end: -1px; width: 18px; height: 18px; border-bottom: 2px solid var(--neon-green); border-inline-end: 2px solid var(--neon-green); }
   .modal-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 18px; }
   .modal-header h2 { font-size: 17px; font-weight: 700; letter-spacing: 0.3px; }
+  .modal-header-actions { display: flex; align-items: center; gap: 10px; }
   .modal-close { background: none; border: none; color: var(--text-muted); font-size: 20px; cursor: pointer; }
   .modal-close:hover { color: var(--crimson); }
+  .modal-print-btn {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: rgba(255,255,255,0.03); border: 1px solid var(--card-border); color: var(--text-main);
+    border-radius: var(--radius-md); padding: 6px 12px; font-size: 12px; font-weight: 700; cursor: pointer;
+    font-family: 'Rajdhani', 'Cairo', sans-serif; transition: all 0.2s ease;
+  }
+  .modal-print-btn:hover { background: rgba(0,217,255,0.08); border-color: var(--neon-cyan); box-shadow: var(--glow-cyan); }
   .modal-note { font-size: 12.5px; color: var(--text-muted); margin-bottom: 14px; }
   .security-note { font-size: 11.5px; color: var(--neon-green); margin-top: 14px; }
+
+  .health-modal-panel { max-width: 640px; }
+  .health-empty { font-size: 13px; color: var(--text-muted); text-align: center; padding: 30px 10px; }
+
+  .health-day-tabs {
+    display: flex; gap: 8px; overflow-x: auto; padding-bottom: 10px; margin-bottom: 16px;
+    border-bottom: 1px solid var(--card-border);
+    scrollbar-width: thin;
+  }
+  .health-day-tab {
+    flex: 0 0 auto; display: flex; flex-direction: column; align-items: center; gap: 2px;
+    background: rgba(255,255,255,0.02); border: 1px solid var(--card-border); border-radius: var(--radius-md);
+    padding: 8px 16px; cursor: pointer; transition: all 0.2s ease; min-width: 78px;
+  }
+  .health-day-tab .hdt-day { font-size: 12.5px; font-weight: 700; color: var(--text-main); }
+  .health-day-tab .hdt-date { font-size: 10.5px; color: var(--text-muted); font-family: 'Rajdhani', sans-serif; }
+  .health-day-tab:hover { border-color: var(--vip-gold-soft); }
+  .health-day-tab.active {
+    border-color: var(--vip-gold); background: rgba(255,209,102,0.08);
+    box-shadow: 0 0 14px rgba(255,209,102,0.18);
+  }
+  .health-day-tab.active .hdt-day { color: var(--vip-gold); }
+
+  .hr-zone-block { margin-bottom: 14px; }
+  .hr-zone-bar { display: flex; width: 100%; height: 18px; border-radius: 20px; overflow: hidden; border: 1px solid var(--card-border); }
+  .hr-zone-seg { height: 100%; display: flex; align-items: center; justify-content: center; font-size: 9.5px; font-weight: 800; color: #071018; transition: width 0.6s ease; }
+  .hr-zone-legend { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 8px; }
+  .hr-zone-legend-item { display: flex; align-items: center; gap: 5px; font-size: 10.5px; color: var(--text-muted); }
+  .hr-zone-legend-dot { width: 9px; height: 9px; border-radius: 50%; flex: 0 0 auto; }
+  .health-report-card {
+    background: rgba(255,255,255,0.02); border: 1px solid var(--card-border);
+    border-inline-start: 2px solid var(--vip-gold); border-radius: var(--radius-md);
+    padding: 16px; margin-bottom: 14px;
+  }
+  .health-report-card:last-child { margin-bottom: 0; }
+  .health-report-date {
+    display: flex; align-items: center; justify-content: space-between;
+    color: var(--neon-cyan); font-size: 12px; font-weight: 700; letter-spacing: 0.5px;
+    font-family: 'Rajdhani', sans-serif; margin-bottom: 12px;
+  }
+  .health-metrics-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(110px, 1fr)); gap: 10px; margin-bottom: 12px; }
+  .health-metric {
+    background: rgba(0,0,0,0.2); border: 1px solid var(--card-border); border-radius: 6px;
+    padding: 8px 10px; text-align: center;
+  }
+  .health-metric .hm-val { font-family: 'Orbitron', sans-serif; font-size: 15px; font-weight: 700; color: var(--text-main); }
+  .health-metric .hm-label { font-size: 10px; color: var(--text-muted); margin-top: 2px; letter-spacing: 0.3px; }
+  .stroke-chips { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 12px; }
+  .stroke-chip {
+    font-size: 11px; font-weight: 700; color: var(--neon-green);
+    background: rgba(174,255,0,0.08); border: 1px solid rgba(174,255,0,0.3);
+    border-radius: 20px; padding: 3px 12px; letter-spacing: 0.3px;
+  }
+  .health-sets-block { margin-bottom: 12px; }
+  .health-notes-block { margin-bottom: 0; }
+  .health-analysis {
+    font-size: 13px; line-height: 1.7; color: var(--text-metal);
+    background: rgba(0,217,255,0.04); border-radius: 6px; padding: 10px 12px;
+    border: 1px solid var(--neon-cyan-soft); white-space: pre-wrap;
+  }
+  .health-analysis-label { font-size: 11px; color: var(--neon-green); font-weight: 700; margin-bottom: 6px; letter-spacing: 0.4px; }
+
+  /* ===== Splits table ===== */
+  .health-splits-block { margin-bottom: 12px; }
+  .splits-table { width: 100%; border-collapse: collapse; font-size: 12px; }
+  .splits-table th {
+    text-align: start; color: var(--neon-cyan); font-weight: 700; font-size: 10.5px;
+    letter-spacing: 0.4px; padding: 5px 8px; border-bottom: 1px solid var(--card-border);
+  }
+  .splits-table td { padding: 5px 8px; border-bottom: 1px solid rgba(255,255,255,0.04); color: var(--text-metal); }
+  .splits-table tr:last-child td { border-bottom: none; }
+  .splits-table .split-stroke {
+    display: inline-block; font-size: 10px; font-weight: 700; color: var(--neon-green);
+    background: rgba(174,255,0,0.08); border: 1px solid rgba(174,255,0,0.25);
+    border-radius: 10px; padding: 1px 8px;
+  }
+  .splits-table .split-fast td { color: var(--neon-green); }
+  .splits-table .split-slow td { color: var(--crimson); }
+
+  /* ===== Trend / comparison section ===== */
+  .health-trends-section {
+    background: rgba(255,255,255,0.02); border: 1px solid var(--card-border);
+    border-radius: var(--radius-md); padding: 14px 16px; margin-bottom: 16px;
+  }
+  .trend-badges { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 12px; }
+  .trend-badge {
+    flex: 1 1 150px; background: rgba(0,0,0,0.2); border: 1px solid var(--card-border);
+    border-radius: 8px; padding: 9px 12px;
+  }
+  .trend-badge .tb-label { font-size: 10px; color: var(--text-muted); letter-spacing: 0.3px; margin-bottom: 3px; }
+  .trend-badge .tb-val { font-family: 'Rajdhani', sans-serif; font-size: 14px; font-weight: 700; color: var(--text-main); }
+  .trend-badge .tb-val.up { color: var(--neon-green); }
+  .trend-badge .tb-val.down { color: var(--crimson); }
+  .trend-charts { display: flex; flex-wrap: wrap; gap: 18px; }
+  .trend-chart-block { flex: 1 1 220px; min-width: 200px; }
+  .trend-chart-block .tc-label { font-size: 10.5px; color: var(--neon-cyan); font-weight: 700; margin-bottom: 4px; letter-spacing: 0.3px; }
+  .trend-chart-block svg { display: block; overflow: visible; }
+
+  /* ===== PB percentile / record badges ===== */
+  .pb-percentile {
+    display: inline-block; margin-top: 5px; font-size: 10px; font-weight: 700;
+    color: var(--vip-gold); background: rgba(255,209,102,0.08); border: 1px solid var(--vip-gold-soft);
+    border-radius: 10px; padding: 1px 8px;
+  }
+  .pb-record-flag {
+    display: inline-flex; align-items: center; gap: 3px; margin-top: 6px;
+    font-size: 10.5px; font-weight: 800; color: var(--neon-green); letter-spacing: 0.3px;
+  }
+  .pb-sparkline { margin-top: 8px; }
+
+  .vip-toggle-row { display: flex; align-items: center; gap: 8px; margin-bottom: 14px; }
+  .vip-toggle-row input { width: 16px; height: 16px; accent-color: var(--neon-green); }
+  .vip-toggle-row label { font-size: 12.5px; color: var(--text-main); font-weight: 600; }
 
   #loginView input { width: 100%; background: rgba(255,255,255,0.03); border: 1px solid var(--card-border); border-radius: 6px; padding: 10px; color: var(--text-main); margin-bottom: 10px; font-family: inherit; }
   #loginView input:focus, .form-row input:focus, .form-row textarea:focus { outline: none; border-color: var(--neon-cyan); box-shadow: 0 0 0 3px rgba(0,217,255,0.12); }
@@ -487,8 +622,9 @@
   .skill-edit-row { margin-bottom: 10px; }
   .skill-edit-row label { display: flex; justify-content: space-between; font-size: 12px; margin-bottom: 4px; }
   .skill-edit-row input[type=range] { width: 100%; accent-color: var(--neon-cyan); }
-  .dyn-row { display: flex; gap: 6px; margin-bottom: 6px; }
-  .dyn-row input { flex: 1; background: rgba(255,255,255,0.03); border: 1px solid var(--card-border); border-radius: 4px; padding: 6px; color: var(--text-main); font-size: 12px; }
+  .dyn-row { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 6px; padding-bottom: 8px; border-bottom: 1px dashed var(--card-border); }
+  .dyn-row input { flex: 1; min-width: 90px; background: rgba(255,255,255,0.03); border: 1px solid var(--card-border); border-radius: 4px; padding: 6px; color: var(--text-main); font-size: 12px; }
+  .dyn-row textarea { flex-basis: 100%; background: rgba(255,255,255,0.03); border: 1px solid var(--card-border); border-radius: 4px; padding: 6px; color: var(--text-main); font-size: 12px; font-family: inherit; resize: vertical; }
   .dyn-remove { background: transparent; border: 1px solid var(--card-border); color: var(--text-muted); border-radius: 4px; padding: 0 8px; cursor: pointer; }
   .dyn-remove:hover { border-color: var(--crimson); color: var(--crimson); }
   .dyn-add { background: transparent; border: 1px dashed var(--card-border); color: var(--neon-cyan); border-radius: 4px; padding: 6px 10px; font-size: 12px; cursor: pointer; margin-top: 4px; }
@@ -504,9 +640,36 @@
     .hero { padding: 32px 0 24px; }
     .form-row.two-col, .form-row.three-col { grid-template-columns: 1fr; }
   }
+
+  @media print {
+    body * { visibility: hidden; }
+    body { background: #fff !important; }
+    #healthReportOverlay, #healthReportOverlay * { visibility: visible; }
+    #healthReportOverlay {
+      position: absolute; inset: 0; background: #fff !important; backdrop-filter: none !important;
+      padding: 0 !important; margin: 0 !important; display: block !important; overflow: visible !important;
+    }
+    #healthReportOverlay .modal-panel {
+      box-shadow: none !important; border: none !important; max-width: 100% !important;
+      margin: 0 !important; padding: 16px !important; background: #fff !important; color: #000 !important;
+    }
+    #healthReportOverlay .modal-panel::before, #healthReportOverlay .modal-panel::after { display: none !important; }
+    #healthReportOverlay .modal-close, #healthReportOverlay .modal-print-btn, #healthReportOverlay .health-day-tabs, #healthReportOverlay .health-trends-section { display: none !important; }
+    #healthReportOverlay, #healthReportOverlay * { color: #111 !important; }
+    #healthReportOverlay .health-report-card {
+      border: 1px solid #ccc !important; background: #fff !important; border-inline-start: 3px solid #b8860b !important;
+      break-inside: avoid; box-shadow: none !important;
+    }
+    #healthReportOverlay .health-metric { background: #f4f4f4 !important; border: 1px solid #ddd !important; }
+    #healthReportOverlay .health-analysis { background: #f7f7f7 !important; border: 1px solid #ddd !important; }
+    #healthReportOverlay .stroke-chip { background: #eee !important; border: 1px solid #ccc !important; }
+    #healthReportOverlay .hr-zone-seg, #healthReportOverlay .hr-zone-legend-dot {
+      -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important;
+    }
+  }
 </style>
 </head>
-<body>
+لوح<body>
 
 <div class="hero-bg-wrapper">
   <div class="hero-bg-image"></div>
@@ -520,9 +683,9 @@
 <div class="wrap">
   <header>
     <div class="brand">LANE CARD</div>
-    <div class="coach-badge">سجلات متابعة الأداء<br>تحت إشراف <strong>الكابتن جورج فايز</strong></div>
+    <div class="coach-badge">Performance Tracking Records<br>Under the Supervision of <strong>Captain George Fayed</strong></div>
     <div class="header-actions">
-      <button class="dashboard-btn" id="dashboardBtn">👨‍🏫 لوحة المدرب</button>
+      <button class="dashboard-btn" id="dashboardBtn">👨‍🏫 Coach Dashboard</button>
       <button class="lang-toggle-btn" id="langToggleBtn" type="button">🌐 AR / EN</button>
     </div>
   </header>
@@ -573,13 +736,9 @@
       </div>
     </div>
 
-    <div class="level-progress" id="rLevelProgressWrap" style="display:none;">
-      <div class="lp-top"><span id="rLpLabel"></span><strong id="rLpPercent"></strong></div>
-      <div class="lp-track"><div class="lp-fill" id="rLpFill" style="width:0%"></div></div>
-    </div>
-
     <div class="share-row">
       <button class="share-btn" type="button" id="shareBtn">📤 <span id="shareBtnLabel">شارك تقدمك</span></button>
+      <button class="share-btn health-btn" type="button" id="healthTrackerBtn" style="display:none;">🏊‍♂️ <span id="healthTrackerBtnLabel">Swim Health Tracker</span></button>
     </div>
 
     <div class="stats-row">
@@ -681,7 +840,7 @@
           <div><label>المستوى</label><input type="text" id="f_level"></div>
         </div>
         <div class="form-row"><label>رابط الصورة</label><input type="text" id="f_photo" placeholder="https://..."></div>
-        <div class="form-row"><label>نسبة التقدم نحو المستوى القادم (%)</label><input type="number" id="f_levelProgress" min="0" max="100" placeholder="مثال: 72"></div>
+        <div class="vip-toggle-row"><input type="checkbox" id="f_vip"><label for="f_vip">⭐ سباح VIP (يظهر له زر Swim Health Tracker)</label></div>
         <div class="form-row three-col">
           <div><label>العمر</label><input type="text" id="f_age"></div>
           <div><label>الطول</label><input type="text" id="f_height"></div>
@@ -715,6 +874,10 @@
           <label>فيديوهات التدريب</label>
           <div id="videosSection"></div>
         </div>
+        <div class="form-section">
+          <label>🏊‍♂️ تقارير Swim Health Tracker (من Apple Watch — لأعضاء VIP)</label>
+          <div id="healthReportsSection"></div>
+        </div>
       </form>
 
       <div class="qr-box">
@@ -728,6 +891,23 @@
       <button id="saveSwimmerBtn" type="button">حفظ البيانات</button>
       <p class="save-status" id="saveStatus"></p>
     </div>
+  </div>
+</div>
+
+<div class="modal-overlay" id="healthReportOverlay">
+  <div class="modal-panel health-modal-panel">
+    <div class="modal-header">
+      <h2 id="healthReportTitle">🏊‍♂️ Swim Health Tracker</h2>
+      <div class="modal-header-actions">
+        <button class="modal-print-btn" id="editHealthReportBtn" type="button" title="تعديل التقرير (الكابتن)">✏️ <span>تعديل</span></button>
+        <button class="modal-print-btn" id="printHealthReportBtn" type="button" title="طباعة التقرير">🖨️ <span>طباعة</span></button>
+        <button class="modal-close" id="closeHealthReport">✕</button>
+      </div>
+    </div>
+    <p class="modal-note" id="healthReportSubtitle">تحليل بيانات Apple Watch الخاصة بجلسات السباحة — متاح حصرياً لأعضاء VIP.</p>
+    <div id="healthTrendsSection"></div>
+    <div class="health-day-tabs" id="healthDayTabs"></div>
+    <div id="healthReportBody"></div>
   </div>
 </div>
 
@@ -811,7 +991,6 @@ const RUNTIME_TEXT = {
     noHistory: 'No level history recorded yet.',
     noNotes: 'No coach notes yet.',
     noVideos: 'No training videos added yet.',
-    lpLabel: 'Progress to next level',
     skillHint: 'Tap to watch a related drill',
     shareBtn: 'Share your progress',
     shareText: (name, serial, level, avg) => name + ' (' + serial + ') — ' + level + '. Overall technique average: ' + avg + '%. Tracked on Lane Card.',
@@ -832,7 +1011,6 @@ const RUNTIME_TEXT = {
     noHistory: 'لا يوجد سجل تقدم مسجل.',
     noNotes: 'لا توجد توجيهات مسجلة من الكابتن.',
     noVideos: 'لا توجد فيديوهات تدريبية متوفرة حالياً.',
-    lpLabel: 'نسبة التقدم نحو المستوى القادم',
     skillHint: 'اضغط لمشاهدة فيديو تدريبي مرتبط',
     shareBtn: 'شارك تقدمك',
     shareText: (name, serial, level, avg) => name + ' (' + serial + ') — ' + level + '. معدل الإتقان العام: ' + avg + '%. متابَع عبر Lane Card.',
@@ -853,7 +1031,6 @@ function T(field){
   return field;
 }
 
-/* ===== بيانات جميع السباحين من swim-lookup (SW-0001 إلى SW-0006) ===== */
 const DEFAULT_SWIMMERS = {
   "SW-0001": {
     name: "Mohamed Abdelmoteleb",
@@ -861,25 +1038,26 @@ const DEFAULT_SWIMMERS = {
     age: 32, height: "165 cm", weight: "60 kg",
     level: "Level 8 — Advanced",
     strengths: [
-      { en: "Strong, consistent freestyle kick", ar: "ضربات رجلين قوية وثابتة في السباحة الحرة" },
-      { en: "Perfect freestyle swim with high techniques", ar: "أداء ممتاز للتكنيك في السباحة الحرة" },
-      { en: "Confident breaststroke", ar: "ثبات وقوة ممتازة في سباحة الصدر" },
-      { en: "Good butterflystroke with strong dolphin kick", ar: "ضربات دولفين قوية في سباحة الفراشة" }
+      { en:"Strong, consistent freestyle kick", ar:"ضربات رجلين قوية وثابتة في السباحة الحرة" },
+      { en:"Perfect freestyle swim with high techniques", ar:"أداء ممتاز للتكنيك في السباحة الحرة" },
+      { en:"Confident breaststroke", ar:"ثبات وقوة ممتازة في سباحة الصدر" },
+      { en:"Good butterflystroke with strong dolphin kick", ar:"ضربات دولفين قوية في سباحة الفراشة" }
     ],
     weaknesses: [
-      { en: "Turns lose speed off the wall", ar: "فقدان جزء من السرعة أثناء الدوران عند الحائط" },
-      { en: "Endurance drops after 400m", ar: "تراجع في معدل التحمل بعد مسافة 400 متر" }
+      { en:"Turns lose speed off the wall", ar:"فقدان جزء من السرعة أثناء الدوران عند الحائط" },
+      { en:"Endurance drops after 400m", ar:"تراجع في معدل التحمل بعد مسافة 400 متر" }
     ],
-    missionTitle: { en: "Master the flip turn and start in addition to endurance and speed", ar: "إتقان لفة الفليب والانطلاقة مع رفع مهارات التحمل والسرعة" },
-    missionText: { en: "Complete 20 clean flip turns in a row with no wall pause, then hold a steady freestyle pace for 400m without a break.", ar: "تنفيذ 20 لفة فليب متتالية بإتقان وبدون توقف، يليها الحفاظ على رتم سريع ومستقر لمسافة 400 متر حرة." },
+    missionTitle: { en:"Master the flip turn and start in addition to endurance and speed", ar:"إتقان لفة الفليب والانطلاقة مع رفع مهارات التحمل والسرعة" },
+    missionText: { en:"Complete 20 clean flip turns in a row with no wall pause, then hold a steady freestyle pace for 400m without a break.", ar:"تنفيذ 20 لفة فليب متتالية بإتقان وبدون توقف، يليها الحفاظ على رتم سريع ومستقر لمسافة 400 متر حرة." },
     nextLevel: "Level 9 — Elite Competitor",
-    nextMissionTitle: { en: "Build race endurance", ar: "بناء قوة التحمل للمنافسات" },
-    nextMissionText: { en: "Swim a continuous 800m freestyle under target pace, and introduce butterfly drills to prepare for the 4-stroke medley.", ar: "سباحة 800 متر حرة متواصلة ضمن الوقت المطلوب، وتطبيق تمارين الفراشة للتحضير لسباق المتنوع." },
+    nextMissionTitle: { en:"Build race endurance", ar:"بناء قوة التحمل للمنافسات" },
+    nextMissionText: { en:"Swim a continuous 800m freestyle under target pace, and introduce butterfly drills to prepare for the 4-stroke medley.", ar:"سباحة 800 متر حرة متواصلة ضمن الوقت المطلوب، وتطبيق تمارين الفراشة للتحضير لسباق المتنوع." },
     skills: { Freestyle: 90, Backstroke: 75, Breaststroke: 85, Butterfly: 80, Turns: 60 },
-    levelProgress: 72,
     personalBests: [
-      { event: "50m Freestyle", time: "27.4s", prev: "27.8s" },
-      { event: "100m Freestyle", time: "59.8s", prev: "1:00.5" },
+      { event: "50m Freestyle", time: "27.4s", prev: "27.8s", percentile: "ضمن أفضل 20% للمستوى",
+        history: [{date:"2026-03-01",time:"28.9s"},{date:"2026-05-10",time:"27.8s"},{date:"2026-08-01",time:"27.4s"}] },
+      { event: "100m Freestyle", time: "59.8s", prev: "1:00.5", percentile: "ضمن أفضل 30% للمستوى",
+        history: [{date:"2026-03-01",time:"1:02.3"},{date:"2026-05-10",time:"1:00.5"},{date:"2026-08-01",time:"59.8s"}] },
       { event: "100m Butterfly", time: "1:08.2", prev: "1:07.9" }
     ],
     progressHistory: [
@@ -888,189 +1066,61 @@ const DEFAULT_SWIMMERS = {
       { date: "2026-08-01", level: "Level 8 — Advanced" }
     ],
     coachNotes: [
-      { date: "2026-08-25", note: "تحسن رائع في ضربة الدولفين هذا الأسبوع - استمر في التركيز على قوة اللفات عند الحائط." }
+      { date: "2026-08-25", note: { en:"Great improvement in dolphin kicks this week - keep focusing on wall turns.", ar:"تحسن رائع في ضربة الدولفين هذا الأسبوع - استمر في التركيز على قوة اللفات عند الحائط." }, relatedSkill: "Turns" }
     ],
     videos: [
       { title: "Flip turn breakdown", date: "20 Aug 2026", url: "https://www.youtube.com/", relatedWeakness: "Turns lose speed off the wall", relatedSkill: "Turns" }
-    ]
-  },
-  "SW-0002": {
-    name: "Youssef Ahmed",
-    photo: "",
-    age: 14, height: "162 cm", weight: "51 kg",
-    level: "Level 5 — Intermediate",
-    strengths: [
-      { en: "High cadence in backstroke", ar: "معدل ضربات سريع في سباحة الظهر" },
-      { en: "Strong streamline off every wall", ar: "انسيابية ممتازة عند الانطلاق من الحائط" }
     ],
-    weaknesses: [
-      { en: "Breathing pattern inconsistent in freestyle", ar: "تنفس غير منتظم أثناء السباحة الحرة" },
-      { en: "Breaststroke kick needs wider sweep", ar: "ركلة الصدر تحتاج لمدى أعرض" }
-    ],
-    missionTitle: { en: "Bilateral breathing drill", ar: "تمرين التنفس التبادلي للجانبين" },
-    missionText: { en: "Swim 300m freestyle maintaining 3-stroke breathing, ensuring head stays aligned.", ar: "سباحة 300 متر حرة مع الالتزام بالتنفس كل 3 ضربات والحفاظ على استقامة الرأس." },
-    nextLevel: "Level 6 — Advanced",
-    nextMissionTitle: { en: "Introduce flip turns", ar: "بدء التدريب على لفة الفليب" },
-    nextMissionText: { en: "Practice 50 wall-approaches with tight tuck position.", ar: "أداء 50 محاولة اقتراب من الحائط مع دوران ضيق للجسد." },
-    skills: { Freestyle: 70, Backstroke: 82, Breaststroke: 58, Butterfly: 45, Turns: 65 },
-    levelProgress: 45,
-    personalBests: [
-      { event: "50m Backstroke", time: "34.1s", prev: "35.2s" },
-      { event: "50m Freestyle", time: "31.0s", prev: "31.8s" }
-    ],
-    progressHistory: [
-      { date: "2026-03-01", level: "Level 4 — Intermediate" },
-      { date: "2026-07-12", level: "Level 5 — Intermediate" }
-    ],
-    coachNotes: [
-      { date: "2026-08-18", note: "الظهر يتحسن بسرعة، ركز أكثر على تمارين النفس التبادلي." }
-    ],
-    videos: [
-      { title: "Bilateral breathing guide", date: "10 Aug 2026", url: "https://www.youtube.com/", relatedWeakness: "Breathing pattern inconsistent in freestyle", relatedSkill: "Freestyle" }
-    ]
-  },
-  "SW-0003": {
-    name: "Laila Mahmoud",
-    photo: "",
-    age: 12, height: "150 cm", weight: "42 kg",
-    level: "Level 4 — Intermediate",
-    strengths: [
-      { en: "Natural glide in breaststroke", ar: "انزلاق طبيعي ممتاز في سباحة الصدر" },
-      { en: "Excellent water feeling and rhythm", ar: "إحساس عالي بالماء وإيقاع متناسق" }
-    ],
-    weaknesses: [
-      { en: "Butterfly stamina drops after 25m", ar: "انخفاض اللياقة في سباحة الفراشة بعد 25 متر" },
-      { en: "Soft kick on backstroke", ar: "ضربات رجلين ضعيفة بعض الشيء في سباحة الظهر" }
-    ],
-    missionTitle: { en: "Breaststroke glide timing", ar: "توقيت الانزلاق في سباحة الصدر" },
-    missionText: { en: "Hold 2-second glide per stroke across 200m set without dropping tempo.", ar: "الثبات على ثانتين من الانزلاق لكل ضربة على مدار 200 متر." },
-    nextLevel: "Level 5 — Intermediate",
-    nextMissionTitle: { en: "Butterfly endurance", ar: "رفع تحمل سباحة الفراشة" },
-    nextMissionText: { en: "Complete 8x25m butterfly with 20s rest interval.", ar: "أداء 8 مجموعات × 25 متر فراشة مع أخذ 20 ثانية راحة." },
-    skills: { Freestyle: 65, Backstroke: 60, Breaststroke: 80, Butterfly: 40, Turns: 55 },
-    levelProgress: 88,
-    personalBests: [
-      { event: "50m Breaststroke", time: "42.5s", prev: "44.0s" },
-      { event: "100m Breaststroke", time: "1:33.2", prev: "1:36.0" }
-    ],
-    progressHistory: [
-      { date: "2026-02-10", level: "Level 3 — Junior" },
-      { date: "2026-05-20", level: "Level 4 — Intermediate" }
-    ],
-    coachNotes: [
-      { date: "2026-08-30", note: "أداء ممتاز في الصدر، قريبون جداً من الانتقال للمستوى الخامس." }
-    ],
-    videos: [
-      { title: "Breaststroke glide timing", date: "05 Aug 2026", url: "https://www.youtube.com/", relatedWeakness: "Butterfly stamina drops after 25m", relatedSkill: "Breaststroke" }
-    ]
-  },
-  "SW-0004": {
-    name: "Kareem Hassan",
-    photo: "",
-    age: 17, height: "178 cm", weight: "70 kg",
-    level: "Level 9 — Elite Competitor",
-    strengths: [
-      { en: "Explosive butterfly rhythm", ar: "إيقاع انفجاري وقوي في سباحة الفراشة" },
-      { en: "Underwaters reach 12m comfortably", ar: "انطلاق تحت الماء يصل إلى 12 متر بسهولة" },
-      { en: "Powerful dive starts", ar: "قفزة انطلاق قوية جداً" }
-    ],
-    weaknesses: [
-      { en: "High elbow drop late in 200m fly", ar: "انخفاض الكوع في الأمتار الأخيرة لسباق 200 متر فراشة" }
-    ],
-    missionTitle: { en: "Sub-minute 100m fly prep", ar: "التحضير لكسر دقيقة في 100 متر فراشة" },
-    missionText: { en: "Run 5x100m fly on 1:30 interval, all under 1:04 pace.", ar: "أداء 5 مجموعات × 100 متر فراشة كل دقيقة ونصف، بزمن أقل من 1:04." },
-    nextLevel: "Level 10 — Master Swimmer",
-    nextMissionTitle: { en: "National qualifier mark", ar: "تحقيق رقم التأهل للبطولة الوطنية" },
-    nextMissionText: { en: "Break 57.5s in 100m butterfly official trial.", ar: "كسر حاجز 57.5 ثانية في اختبار 100 متر فراشة الرسمي." },
-    skills: { Freestyle: 88, Backstroke: 82, Breaststroke: 78, Butterfly: 94, Turns: 86 },
-    levelProgress: 60,
-    personalBests: [
-      { event: "50m Butterfly", time: "25.8s", prev: "26.3s" },
-      { event: "100m Butterfly", time: "58.2s", prev: "59.4s" },
-      { event: "50m Freestyle", time: "24.9s", prev: "25.1s" }
-    ],
-    progressHistory: [
-      { date: "2025-11-01", level: "Level 7 — Advanced" },
-      { date: "2026-03-15", level: "Level 8 — Advanced" },
-      { date: "2026-07-01", level: "Level 9 — Elite Competitor" }
-    ],
-    coachNotes: [
-      { date: "2026-09-01", note: "مشروع بطل واعد! حافظ على التركيز في تدريبات الكوع المرتفع." }
-    ],
-    videos: [
-      { title: "High elbow catch drills", date: "28 Aug 2026", url: "https://www.youtube.com/", relatedWeakness: "High elbow drop late in 200m fly", relatedSkill: "Butterfly" }
-    ]
-  },
-  "SW-0005": {
-    name: "Omar Sherif",
-    photo: "",
-    age: 10, height: "138 cm", weight: "33 kg",
-    level: "Level 2 — Beginner Plus",
-    strengths: [
-      { en: "High enthusiasm and focus", ar: "حماس واهتمام عالي جداً بالتمارين" },
-      { en: "Quick kick speed on kickboard", ar: "سرعة ضربات رجلين ممتازة باستخدام البورد" }
-    ],
-    weaknesses: [
-      { en: "Head stays too high during freestyle", ar: "رفع الرأس بأعلى من المطلوب في السباحة الحرة" },
-      { en: "Sinks hips on backstroke", ar: "هبوط الجذع والحوض أثناء سباحة الظهر" }
-    ],
-    missionTitle: { en: "Head position and balance", ar: "ضبط وضعية الرأس والتوازن" },
-    missionText: { en: "Swim 4x50m freestyle looking straight down at the bottom T line.", ar: "سباحة 4 مجموعات × 50 متر حرة مع النظر مباشرة لقاع المسبح." },
-    nextLevel: "Level 3 — Junior",
-    nextMissionTitle: { en: "Continuous 100m swim", ar: "سباحة 100 متر متواصلة" },
-    nextMissionText: { en: "Swim 100m freestyle non-stop with good side breathing.", ar: "سباحة 100 متر حرة متواصلة دون توقف مع تنفس جانبي صحيح." },
-    skills: { Freestyle: 45, Backstroke: 40, Breaststroke: 25, Butterfly: 15, Turns: 30 },
-    levelProgress: 30,
-    personalBests: [
-      { event: "25m Freestyle", time: "21.2s", prev: "23.5s" },
-      { event: "25m Backstroke", time: "24.0s", prev: "26.1s" }
-    ],
-    progressHistory: [
-      { date: "2026-05-01", level: "Level 1 — Starter" },
-      { date: "2026-08-01", level: "Level 2 — Beginner Plus" }
-    ],
-    coachNotes: [
-      { date: "2026-08-20", note: "تطور ملحوظ في قوة الرجلين، استمر يا بطل!" }
-    ],
-    videos: [
-      { title: "Head position alignment drill", date: "15 Aug 2026", url: "https://www.youtube.com/", relatedWeakness: "Head stays too high during freestyle", relatedSkill: "Freestyle" }
-    ]
-  },
-  "SW-0006": {
-    name: "Nour Ali",
-    photo: "",
-    age: 15, height: "167 cm", weight: "55 kg",
-    level: "Level 7 — Advanced",
-    strengths: [
-      { en: "Balanced 200m Individual Medley pacing", ar: "توزيع مجهود ممتاز في سباق 200 متر متنوع" },
-      { en: "Clean back-to-breast turn technique", ar: "دوران انتقالي نظيف وسريع من الظهر للصدر" }
-    ],
-    weaknesses: [
-      { en: "Freestyle stroke finish needs full extension", ar: "سحب الذراع في الحرة يحتاج لامتداء كامل في النهاية" },
-      { en: "Reaction time on block starts", ar: "زمن الاستجابة على المنصة يفتقد للسرعة" }
-    ],
-    missionTitle: { en: "200m Medley stroke transition", ar: "تحسين الانتقالات في 200 متر متنوع" },
-    missionText: { en: "Perform 6x50m medley transitions focusing on tight streamlines off each wall.", ar: "أداء 6 مجموعات × 50 متر انتقالات متنوع مع التركيز على الانسيابية عند كل حائط." },
-    nextLevel: "Level 8 — Advanced",
-    nextMissionTitle: { en: "Sub-2:45 200m IM target", ar: "كسر حاجز 2:45 في 200 متر متنوع" },
-    nextMissionText: { en: "Complete timed 200m IM maintaining under 41s per 50m split.", ar: "إنهاء سباق 200 متر متنوع بزمن أقل من 41 ثانية لكل 50 متر." },
-    skills: { Freestyle: 78, Backstroke: 84, Breaststroke: 82, Butterfly: 72, Turns: 75 },
-    levelProgress: 80,
-    personalBests: [
-      { event: "200m IM", time: "2:48.5", prev: "2:54.0" },
-      { event: "100m Backstroke", time: "1:15.2", prev: "1:17.8" },
-      { event: "50m Freestyle", time: "29.4s", prev: "30.1s" }
-    ],
-    progressHistory: [
-      { date: "2025-09-10", level: "Level 5 — Intermediate" },
-      { date: "2026-02-01", level: "Level 6 — Advanced" },
-      { date: "2026-06-15", level: "Level 7 — Advanced" }
-    ],
-    coachNotes: [
-      { date: "2026-08-28", note: "أداء المتنوع يتطور بثبات رائع، ركزي على قوة الدفع باليد في نهاية السحبة." }
-    ],
-    videos: [
-      { title: "Medley transition turns", date: "12 Aug 2026", url: "https://www.youtube.com/", relatedWeakness: "Freestyle stroke finish needs full extension", relatedSkill: "Turns" }
+    vip: true,
+    healthReports: [
+      {
+        date: "2026-08-25",
+        distance: "1200 m",
+        strokeTypes: "حرة، صدر",
+        duration: "31:05",
+        activeCalories: "350 kcal",
+        totalCalories: "440 kcal",
+        avgHr: "136 bpm",
+        maxHr: "159 bpm",
+        laps: "48",
+        pace: "2:35",
+        swolf: "44",
+        strokeCount: "17 ضربة/طول",
+        strokeRate: "38 ضربة/دقيقة",
+        distancePerStroke: "1.6 م/ضربة",
+        restingHr: "60 bpm",
+        waterTemp: "27°C",
+        poolLength: "مسبح 25م",
+        restIntervals: "20 ثانية بين كل مجموعة 100م",
+        hrZone1: "15", hrZone2: "30", hrZone3: "35", hrZone4: "15", hrZone5: "5",
+        splits: "25م 0:17 حرة\n25م 0:18 حرة\n25م 0:19 صدر\n25م 0:20 صدر\n25م 0:17 حرة\n25م 0:18 حرة",
+        setsBreakdown: "المجموعة 1 (300م حرة إحماء): 6:40\nالمجموعة 2 (4×100م صدر): متوسط 1:55 للطول\nالمجموعة 3 (300م حرة تهدئة): 6:50",
+        notes: "جلسة إحماء جيدة بعد فترة راحة. معدل النبض في نطاق آمن طوال الوقت مع تركيز واضح على تقنية سباحة الصدر."
+      },
+      {
+        date: "2026-08-30",
+        distance: "1500 m",
+        strokeTypes: "حرة، ظهر، فراشة",
+        duration: "38:20",
+        activeCalories: "410 kcal",
+        totalCalories: "520 kcal",
+        avgHr: "142 bpm",
+        maxHr: "168 bpm",
+        laps: "60",
+        pace: "2:33",
+        swolf: "41",
+        strokeCount: "16 ضربة/طول",
+        strokeRate: "40 ضربة/دقيقة",
+        distancePerStroke: "1.8 م/ضربة",
+        restingHr: "57 bpm",
+        waterTemp: "28°C",
+        poolLength: "مسبح 50م",
+        restIntervals: "30 ثانية بين كل مجموعة 200م",
+        hrZone1: "10", hrZone2: "20", hrZone3: "30", hrZone4: "28", hrZone5: "12",
+        splits: "50م 0:33 حرة\n50م 0:34 حرة\n50م 0:35 ظهر\n50م 0:36 ظهر\n50م 0:31 حرة\n50م 0:32 فراشة",
+        setsBreakdown: "المجموعة 1 (400م حرة إحماء): 8:10\nالمجموعة 2 (6×100م حرة بأقصى سرعة): متوسط 1:32 للطول\nالمجموعة 3 (200م ظهر تهدئة): 4:45",
+        notes: "أداء قوي ومستقر في معدل ضربات القلب طوال الجلسة، مع تحسن ملحوظ في السرعة بالربع الأخير. يُنصح بمتابعة التنفس أثناء اللفات لتقليل معدل SWOLF."
+      }
     ]
   }
 };
@@ -1151,7 +1201,6 @@ function renderRecord(record, serial){
   }
 
   renderSkills(record);
-  renderLevelProgress(record);
 
   const sList = document.getElementById('rStrengths');
   sList.innerHTML = '';
@@ -1176,6 +1225,9 @@ function renderRecord(record, serial){
   renderHistory(record);
   renderNotes(record);
   renderVideos(record);
+
+  const healthBtn = document.getElementById('healthTrackerBtn');
+  healthBtn.style.display = record.vip ? 'inline-flex' : 'none';
 }
 
 window.__rerenderSwimmer = function(){
@@ -1190,7 +1242,7 @@ shareBtn.addEventListener('click', async () => {
   const text = RT().shareText(lastRecord.name, lastSerial, lastRecord.level, avg);
   const shareUrl = window.location.href.split('?')[0] + '?serial=' + encodeURIComponent(lastSerial);
   if (navigator.share) {
-    try { await navigator.share({ title: 'Lane Card', text: text, url: shareUrl }); return; } catch(e) { }
+    try { await navigator.share({ title: 'Lane Card', text: text, url: shareUrl }); return; } catch(e) {}
   }
   try {
     await navigator.clipboard.writeText(text + ' ' + shareUrl);
@@ -1198,7 +1250,7 @@ shareBtn.addEventListener('click', async () => {
     const original = label.textContent;
     label.textContent = RT().shareCopied;
     setTimeout(() => { label.textContent = original; }, 2600);
-  } catch(e) { }
+  } catch(e) {}
 });
 
 function findVideoForSkill(record, skillName){
@@ -1278,16 +1330,6 @@ function renderSkills(record){
   });
 }
 
-function renderLevelProgress(record){
-  const wrapEl = document.getElementById('rLevelProgressWrap');
-  const pct = record.levelProgress != null && record.levelProgress !== '' ? Math.max(0, Math.min(100, parseInt(record.levelProgress, 10))) : null;
-  if (pct === null || isNaN(pct)) { wrapEl.style.display = 'none'; return; }
-  wrapEl.style.display = 'block';
-  document.getElementById('rLpLabel').textContent = RT().lpLabel;
-  document.getElementById('rLpPercent').textContent = pct + '%';
-  document.getElementById('rLpFill').style.width = pct + '%';
-}
-
 function parseSwimTime(str){
   if (!str) return null;
   str = String(str).trim().replace(/s$/i, '');
@@ -1310,6 +1352,7 @@ function renderPersonalBests(record){
     const card = document.createElement('div');
     card.className = 'pb-card';
     let deltaHtml = '';
+    let recordFlag = '';
     if (pb.prev) {
       const curSec = parseSwimTime(pb.time), prevSec = parseSwimTime(pb.prev);
       if (curSec != null && prevSec != null && curSec !== prevSec) {
@@ -1318,9 +1361,22 @@ function renderPersonalBests(record){
         deltaHtml = '<div class="pb-delta ' + (improved ? 'up' : 'down') + '">' +
           (improved ? '▲ ' + RT().fasterBy(diff) : '▼ ' + RT().slowerBy(diff)) + '</div>' +
           '<div class="pb-prev">' + pb.prev + '</div>';
+        if (improved) recordFlag = '<div class="pb-record-flag">🏆 رقم قياسي جديد</div>';
       }
     }
-    card.innerHTML = '<div class="pb-event">' + T(pb.event) + '</div><div class="pb-time">' + pb.time + '</div>' + deltaHtml;
+    const percentileHtml = pb.percentile ? '<div class="pb-percentile">🎯 ' + pb.percentile + '</div>' : '';
+    let sparkHtml = '';
+    if (Array.isArray(pb.history) && pb.history.length >= 2) {
+      const series = pb.history
+        .map(h => ({ date: h.date, value: parseSwimTime(h.time) }))
+        .filter(h => h.value != null)
+        .sort((a,b) => (a.date||'').localeCompare(b.date||''));
+      if (series.length >= 2) {
+        sparkHtml = '<div class="pb-sparkline">' + buildSparkline(series, {color:'#aeff00'}) + '</div>';
+      }
+    }
+    card.innerHTML = '<div class="pb-event">' + T(pb.event) + '</div><div class="pb-time">' + pb.time + '</div>' +
+      deltaHtml + recordFlag + percentileHtml + sparkHtml;
     wrap.appendChild(card);
   });
 }
@@ -1428,6 +1484,374 @@ function renderVideos(record){
   });
 }
 
+const HR_ZONE_DEFS = [
+  {key:'hrZone1', label:'المنطقة 1 — إحماء', color:'#00d9ff'},
+  {key:'hrZone2', label:'المنطقة 2 — حرق دهون', color:'#aeff00'},
+  {key:'hrZone3', label:'المنطقة 3 — كارديو', color:'#ffd166'},
+  {key:'hrZone4', label:'المنطقة 4 — عالي الشدة', color:'#ff8f3f'},
+  {key:'hrZone5', label:'المنطقة 5 — أقصى مجهود', color:'#ff2f6d'}
+];
+
+function healthMetricDefs(){
+  return [
+    {key:'poolLength', label:'مكان التدريب'},
+    {key:'waterTemp', label:'حرارة الماء'},
+    {key:'distance', label:'المسافة الكلية'},
+    {key:'duration', label:'الوقت المنقضي'},
+    {key:'activeCalories', label:'سعرات نشطة'},
+    {key:'totalCalories', label:'سعرات إجمالية'},
+    {key:'avgHr', label:'متوسط النبض'},
+    {key:'maxHr', label:'أقصى نبض'},
+    {key:'restingHr', label:'نبض الراحة'},
+    {key:'laps', label:'الأطوال'},
+    {key:'pace', label:'المعدل / 100م'},
+    {key:'swolf', label:'SWOLF'},
+    {key:'strokeCount', label:'ضربات المعصم / طول'},
+    {key:'strokeRate', label:'معدل الضربة'},
+    {key:'distancePerStroke', label:'المسافة / ضربة'},
+    {key:'restIntervals', label:'فترات الراحة'}
+  ];
+}
+
+// Parses a free-text splits block, one length per line, format: "<distance> <time> [stroke]"
+// e.g. "25م 0:17 حرة" -> {distance:"25م", time:"0:17", stroke:"حرة"}
+function parseSplits(raw){
+  if (!raw) return [];
+  return String(raw).split('\n').map(l => l.trim()).filter(Boolean).map(line => {
+    const m = line.match(/^(\S+)\s+([0-9:.]+)\s*(.*)$/);
+    if (!m) return { distance: '', time: line, stroke: '' };
+    return { distance: m[1], time: m[2], stroke: m[3].trim() };
+  });
+}
+
+function renderSplitsTable(container, splitsRaw){
+  const splits = parseSplits(splitsRaw);
+  if (!splits.length) return;
+  const times = splits.map(s => parseSwimTime(s.time)).filter(t => t != null);
+  const fastest = times.length ? Math.min(...times) : null;
+  const slowest = times.length ? Math.max(...times) : null;
+
+  const block = document.createElement('div');
+  block.className = 'health-splits-block';
+  const rows = splits.map((s, i) => {
+    const t = parseSwimTime(s.time);
+    let cls = '';
+    if (t != null && times.length > 1) {
+      if (t === fastest) cls = ' class="split-fast"';
+      else if (t === slowest) cls = ' class="split-slow"';
+    }
+    return '<tr' + cls + '><td>' + (i+1) + '</td><td>' + (s.distance || '—') + '</td><td>' + s.time + '</td>' +
+      '<td>' + (s.stroke ? '<span class="split-stroke">' + s.stroke + '</span>' : '—') + '</td></tr>';
+  }).join('');
+  block.innerHTML =
+    '<div class="health-analysis-label">🏊 تفاصيل الأطوال (Splits)</div>' +
+    '<table class="splits-table"><thead><tr><th>#</th><th>المسافة</th><th>الزمن</th><th>الضربة</th></tr></thead>' +
+    '<tbody>' + rows + '</tbody></table>';
+  container.appendChild(block);
+}
+
+function healthDayLabel(dateStr){
+  if (!dateStr) return { weekday: '—', dayMonth: '' };
+  const d = new Date(dateStr + 'T00:00:00');
+  if (isNaN(d.getTime())) return { weekday: dateStr, dayMonth: '' };
+  let weekday, dayMonth;
+  try {
+    weekday = new Intl.DateTimeFormat('ar', { weekday: 'long' }).format(d);
+    dayMonth = new Intl.DateTimeFormat('ar', { day: 'numeric', month: 'short' }).format(d);
+  } catch (e) {
+    weekday = dateStr; dayMonth = '';
+  }
+  return { weekday, dayMonth };
+}
+
+// Generic small SVG trend line for a series of {date, value} points (lower-is-better aware)
+function buildSparkline(points, opts){
+  opts = opts || {};
+  const w = 260, h = 60, padX = 8, padY = 10;
+  const vals = points.map(p => p.value);
+  const min = Math.min(...vals), max = Math.max(...vals);
+  const span = (max - min) || 1;
+  const stepX = points.length > 1 ? (w - padX*2) / (points.length - 1) : 0;
+  const pts = points.map((p, i) => {
+    const x = padX + i * stepX;
+    const y = padY + (h - padY*2) * (1 - (p.value - min) / span);
+    return [x, y];
+  });
+  const linePath = pts.map((p,i) => (i===0?'M':'L') + p[0].toFixed(1) + ',' + p[1].toFixed(1)).join(' ');
+  const color = opts.color || '#00d9ff';
+  const dots = pts.map((p,i) =>
+    '<circle cx="' + p[0].toFixed(1) + '" cy="' + p[1].toFixed(1) + '" r="3" fill="#0c0f16" stroke="' + color + '" stroke-width="2"/>' +
+    '<title>' + (points[i].date || '') + ': ' + points[i].value + '</title>'
+  ).join('');
+  return '<svg viewBox="0 0 ' + w + ' ' + h + '" width="100%" height="60" preserveAspectRatio="none">' +
+    '<path d="' + linePath + '" fill="none" stroke="' + color + '" stroke-width="2" stroke-linecap="round"/>' +
+    dots + '</svg>';
+}
+
+function numFrom(str){
+  if (str == null) return null;
+  const m = String(str).replace(',', '.').match(/-?\d+(\.\d+)?/);
+  return m ? parseFloat(m[0]) : null;
+}
+
+// Converts distance string like "1500 m" / "48 لفة" into a meter count, best-effort.
+function distanceToMeters(str){
+  const n = numFrom(str);
+  if (n == null) return 0;
+  return n;
+}
+
+// Builds a per-stroke average pace (seconds/meter) profile for this swimmer from every
+// manually-tagged split across all their health reports. Used to auto-detect the stroke
+// of any split length the coach entered without one.
+function buildStrokePaceProfile(record){
+  const totals = {};
+  (record.healthReports || []).forEach(r => {
+    parseSplits(r.splits).forEach(s => {
+      if (!s.stroke) return;
+      const t = parseSwimTime(s.time);
+      const d = numFrom(s.distance);
+      if (t == null || !d) return;
+      if (!totals[s.stroke]) totals[s.stroke] = { sum: 0, count: 0 };
+      totals[s.stroke].sum += t / d;
+      totals[s.stroke].count++;
+    });
+  });
+  const profile = {};
+  Object.keys(totals).forEach(k => { profile[k] = totals[k].sum / totals[k].count; });
+  return profile;
+}
+
+function computeHealthTrends(record){
+  const reports = (record.healthReports || []).slice().filter(r => r.date).sort((a,b) => (a.date||'').localeCompare(b.date||''));
+  if (!reports.length) return null;
+  const latest = reports[reports.length - 1];
+  const prior = reports.slice(0, -1).slice(-5); // up to 5 sessions before the latest
+
+  function avgOf(key){
+    const vals = prior.map(r => numFrom(r[key])).filter(v => v != null);
+    if (!vals.length) return null;
+    return vals.reduce((a,b) => a+b, 0) / vals.length;
+  }
+
+  const swolfNow = numFrom(latest.swolf);
+  const paceNow = numFrom(latest.pace);
+  const swolfAvg = avgOf('swolf');
+  const paceAvg = avgOf('pace');
+
+  // Weekly training load: sum(distance-weighted intensity) for sessions within 7 days of the latest one
+  const latestDate = new Date(latest.date + 'T00:00:00');
+  let weeklyLoad = 0, weeklySessions = 0;
+  reports.forEach(r => {
+    const d = new Date(r.date + 'T00:00:00');
+    if (isNaN(d.getTime()) || isNaN(latestDate.getTime())) return;
+    const days = (latestDate - d) / 86400000;
+    if (days >= 0 && days <= 7) {
+      const meters = distanceToMeters(r.distance);
+      const z4 = numFrom(r.hrZone4) || 0, z5 = numFrom(r.hrZone5) || 0;
+      const intensity = 1 + (z4*0.5 + z5*1.0) / 100;
+      weeklyLoad += (meters / 100) * intensity;
+      weeklySessions++;
+    }
+  });
+
+  const swolfSeries = reports.filter(r => numFrom(r.swolf) != null).map(r => ({ date: r.date, value: numFrom(r.swolf) }));
+  const paceSeries = reports.filter(r => numFrom(r.pace) != null).map(r => ({ date: r.date, value: numFrom(r.pace) }));
+  const restingHrSeries = reports.filter(r => numFrom(r.restingHr) != null).map(r => ({ date: r.date, value: numFrom(r.restingHr) }));
+
+  return { reports, latest, prior, swolfNow, paceNow, swolfAvg, paceAvg, weeklyLoad: Math.round(weeklyLoad), weeklySessions, swolfSeries, paceSeries, restingHrSeries };
+}
+
+function trendBadgeHtml(label, current, avg, unitSuffix){
+  if (current == null || avg == null) return '';
+  const diff = current - avg;
+  const improved = diff < 0; // lower SWOLF/pace is better
+  const pct = avg !== 0 ? Math.abs(diff / avg * 100).toFixed(0) : '0';
+  const arrow = improved ? '▼' : (diff === 0 ? '—' : '▲');
+  const cls = diff === 0 ? '' : (improved ? 'up' : 'down');
+  return '<div class="trend-badge"><div class="tb-label">' + label + ' — مقارنة بمتوسط آخر 5 جلسات</div>' +
+    '<div class="tb-val ' + cls + '">' + arrow + ' ' + Math.abs(diff).toFixed(1) + unitSuffix + ' (' + pct + '%)</div></div>';
+}
+
+function renderHealthTrends(container, record){
+  const t = computeHealthTrends(record);
+  container.innerHTML = '';
+  if (!t) return;
+  const box = document.createElement('div');
+  box.className = 'health-trends-section';
+
+  let badgesHtml = '<div class="trend-badges">';
+  if (t.swolfAvg != null) badgesHtml += trendBadgeHtml('SWOLF', t.swolfNow, t.swolfAvg, '');
+  if (t.paceAvg != null) badgesHtml += trendBadgeHtml('المعدل (Pace)', t.paceNow, t.paceAvg, 's');
+  badgesHtml += '<div class="trend-badge"><div class="tb-label">حِمل التدريب الأسبوعي (7 أيام)</div>' +
+    '<div class="tb-val">' + t.weeklyLoad + ' وحدة — ' + t.weeklySessions + ' جلسة</div></div>';
+  badgesHtml += '</div>';
+
+  let chartsHtml = '<div class="trend-charts">';
+  if (t.swolfSeries.length >= 2) chartsHtml += '<div class="trend-chart-block"><div class="tc-label">📉 تطور SWOLF عبر الجلسات</div>' + buildSparkline(t.swolfSeries, {color:'#00d9ff'}) + '</div>';
+  if (t.paceSeries.length >= 2) chartsHtml += '<div class="trend-chart-block"><div class="tc-label">📉 تطور المعدل (Pace) عبر الجلسات</div>' + buildSparkline(t.paceSeries, {color:'#aeff00'}) + '</div>';
+  if (t.restingHrSeries.length >= 2) chartsHtml += '<div class="trend-chart-block"><div class="tc-label">💤 نبض الراحة عبر الأسابيع</div>' + buildSparkline(t.restingHrSeries, {color:'#ffd166'}) + '</div>';
+  chartsHtml += '</div>';
+
+  box.innerHTML = '<div class="health-analysis-label">📊 مقارنات ذكية وحمل التدريب</div>' + badgesHtml + chartsHtml;
+  container.appendChild(box);
+}
+
+function renderHealthReportCard(container, r){
+  container.innerHTML = '';
+  const card = document.createElement('div');
+  card.className = 'health-report-card';
+
+  const dateRow = document.createElement('div');
+  dateRow.className = 'health-report-date';
+  const lbl = healthDayLabel(r.date);
+  dateRow.innerHTML = '<span>⌚ ' + lbl.weekday + (lbl.dayMonth ? ' — ' + lbl.dayMonth : '') + '</span>';
+  card.appendChild(dateRow);
+
+  if (r.strokeTypes) {
+    const chipsWrap = document.createElement('div');
+    chipsWrap.className = 'stroke-chips';
+    String(r.strokeTypes).split(/[,،]/).map(s => s.trim()).filter(Boolean).forEach(s => {
+      const chip = document.createElement('span');
+      chip.className = 'stroke-chip';
+      chip.textContent = s;
+      chipsWrap.appendChild(chip);
+    });
+    if (chipsWrap.children.length) card.appendChild(chipsWrap);
+  }
+
+  if (r.splits) {
+    renderSplitsTable(card, r.splits);
+  }
+
+  const grid = document.createElement('div');
+  grid.className = 'health-metrics-grid';
+  healthMetricDefs().forEach(m => {
+    if (!r[m.key]) return;
+    const cell = document.createElement('div');
+    cell.className = 'health-metric';
+    cell.innerHTML = '<div class="hm-val">' + r[m.key] + '</div><div class="hm-label">' + m.label + '</div>';
+    grid.appendChild(cell);
+  });
+  if (grid.children.length) card.appendChild(grid);
+
+  const hasZones = HR_ZONE_DEFS.some(z => r[z.key]);
+  if (hasZones) {
+    const zoneBlock = document.createElement('div');
+    zoneBlock.className = 'hr-zone-block';
+
+    const barLabel = document.createElement('div');
+    barLabel.className = 'health-analysis-label';
+    barLabel.textContent = '💓 مناطق ضربات القلب أثناء التمرين';
+    zoneBlock.appendChild(barLabel);
+
+    const bar = document.createElement('div');
+    bar.className = 'hr-zone-bar';
+    const legend = document.createElement('div');
+    legend.className = 'hr-zone-legend';
+
+    HR_ZONE_DEFS.forEach(z => {
+      const val = parseFloat(r[z.key]);
+      if (!val || isNaN(val)) return;
+      const seg = document.createElement('div');
+      seg.className = 'hr-zone-seg';
+      seg.style.width = val + '%';
+      seg.style.background = z.color;
+      seg.textContent = val >= 10 ? val + '%' : '';
+      bar.appendChild(seg);
+
+      const legendItem = document.createElement('div');
+      legendItem.className = 'hr-zone-legend-item';
+      legendItem.innerHTML = '<span class="hr-zone-legend-dot" style="background:' + z.color + '"></span>' + z.label + ' — ' + val + '%';
+      legend.appendChild(legendItem);
+    });
+
+    zoneBlock.appendChild(bar);
+    zoneBlock.appendChild(legend);
+    card.appendChild(zoneBlock);
+  }
+
+  if (r.setsBreakdown) {
+    const sets = document.createElement('div');
+    sets.className = 'health-sets-block';
+    sets.innerHTML = '<div class="health-analysis-label">🏁 تفاصيل المجموعات</div><div class="health-analysis"></div>';
+    sets.querySelector('.health-analysis').textContent = r.setsBreakdown;
+    card.appendChild(sets);
+  }
+
+  if (r.notes) {
+    const analysis = document.createElement('div');
+    analysis.className = 'health-notes-block';
+    analysis.innerHTML = '<div class="health-analysis-label">📋 تحليل الكابتن</div><div class="health-analysis"></div>';
+    analysis.querySelector('.health-analysis').textContent = r.notes;
+    card.appendChild(analysis);
+  }
+
+  container.appendChild(card);
+}
+
+function renderHealthReportModal(record){
+  const tabsWrap = document.getElementById('healthDayTabs');
+  const body = document.getElementById('healthReportBody');
+  const trendsWrap = document.getElementById('healthTrendsSection');
+  tabsWrap.innerHTML = '';
+  body.innerHTML = '';
+  if (trendsWrap) trendsWrap.innerHTML = '';
+
+  const reports = (record.healthReports || []).slice().sort((a,b) => (a.date||'').localeCompare(b.date||''));
+
+  if (!reports.length) {
+    tabsWrap.style.display = 'none';
+    body.innerHTML = '<div class="health-empty">لا توجد تقارير صحية مسجلة بعد لهذا السباح.<br>سيقوم الكابتن بإضافة تحليل جلسات Apple Watch هنا أولاً بأول.</div>';
+    return;
+  }
+  tabsWrap.style.display = 'flex';
+  if (trendsWrap) renderHealthTrends(trendsWrap, record);
+
+  function selectDay(i){
+    Array.from(tabsWrap.children).forEach((el, idx) => el.classList.toggle('active', idx === i));
+    renderHealthReportCard(body, reports[i]);
+  }
+
+  reports.forEach((r, i) => {
+    const tab = document.createElement('button');
+    tab.type = 'button';
+    tab.className = 'health-day-tab';
+    const lbl = healthDayLabel(r.date);
+    tab.innerHTML = '<span class="hdt-day">' + lbl.weekday + '</span>' + (lbl.dayMonth ? '<span class="hdt-date">' + lbl.dayMonth + '</span>' : '');
+    tab.addEventListener('click', () => selectDay(i));
+    tabsWrap.appendChild(tab);
+  });
+
+  selectDay(reports.length - 1);
+}
+
+const healthTrackerBtn = document.getElementById('healthTrackerBtn');
+const healthReportOverlay = document.getElementById('healthReportOverlay');
+const closeHealthReport = document.getElementById('closeHealthReport');
+const printHealthReportBtn = document.getElementById('printHealthReportBtn');
+const editHealthReportBtn = document.getElementById('editHealthReportBtn');
+
+healthTrackerBtn.addEventListener('click', () => {
+  if (!lastRecord) return;
+  renderHealthReportModal(lastRecord);
+  healthReportOverlay.style.display = 'flex';
+});
+closeHealthReport.addEventListener('click', () => { healthReportOverlay.style.display = 'none'; });
+healthReportOverlay.addEventListener('click', (e) => { if (e.target === healthReportOverlay) healthReportOverlay.style.display = 'none'; });
+printHealthReportBtn.addEventListener('click', () => { window.print(); });
+editHealthReportBtn.addEventListener('click', () => {
+  if (!lastSerial) return;
+  healthReportOverlay.style.display = 'none';
+  pendingHealthEditSerial = lastSerial;
+  document.getElementById('dashboardOverlay').style.display = 'flex';
+  if (document.getElementById('editorView').style.display === 'block') {
+    const serial = pendingHealthEditSerial;
+    pendingHealthEditSerial = null;
+    jumpToHealthEdit(serial);
+  }
+});
+
 (function checkUrlParam(){
   const params = new URLSearchParams(window.location.search);
   const qSerial = params.get('serial');
@@ -1457,12 +1881,31 @@ let collectPB = () => [];
 let collectHistory = () => [];
 let collectNotes = () => [];
 let collectVideos = () => [];
+let collectHealthReports = () => [];
 let currentEditingSerial = null;
 let unsubscribeAllSwimmers = null;
 
 dashboardBtn.addEventListener('click', () => { overlay.style.display = 'flex'; });
 closeDashboard.addEventListener('click', () => { overlay.style.display = 'none'; });
 overlay.addEventListener('click', (e) => { if (e.target === overlay) overlay.style.display = 'none'; });
+
+let pendingHealthEditSerial = null;
+
+function jumpToHealthEdit(serial){
+  if (swimmers[serial]) {
+    swimmerSelect.value = serial;
+    loadSwimmerIntoForm(serial);
+  }
+  setTimeout(() => {
+    const section = document.getElementById('healthReportsSection');
+    if (!section) return;
+    const wrap = section.closest('.form-section') || section;
+    wrap.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    wrap.style.transition = 'box-shadow 0.3s ease';
+    wrap.style.boxShadow = '0 0 0 2px var(--vip-gold)';
+    setTimeout(() => { wrap.style.boxShadow = ''; }, 1800);
+  }, 120);
+}
 
 function enterEditor(){
   loginView.style.display = 'none';
@@ -1471,14 +1914,22 @@ function enterEditor(){
     unsubscribeAllSwimmers = window.fbListenAllSwimmers((all) => {
       swimmers = all;
       populateSwimmerSelect();
-      if (!currentEditingSerial && swimmerSelect.options.length) {
+      if (pendingHealthEditSerial && swimmers[pendingHealthEditSerial]) {
+        const serial = pendingHealthEditSerial;
+        pendingHealthEditSerial = null;
+        jumpToHealthEdit(serial);
+      } else if (!currentEditingSerial && swimmerSelect.options.length) {
         swimmerSelect.selectedIndex = 0;
         loadSwimmerIntoForm(swimmerSelect.value);
       }
     });
   } else {
     populateSwimmerSelect();
-    if (swimmerSelect.options.length) {
+    if (pendingHealthEditSerial && swimmers[pendingHealthEditSerial]) {
+      const serial = pendingHealthEditSerial;
+      pendingHealthEditSerial = null;
+      jumpToHealthEdit(serial);
+    } else if (swimmerSelect.options.length) {
       swimmerSelect.selectedIndex = 0;
       loadSwimmerIntoForm(swimmerSelect.value);
     } else {
@@ -1582,11 +2033,16 @@ function buildDynamicSection(containerEl, fieldDefs, items, addBtnLabel){
     const row = document.createElement('div');
     row.className = 'dyn-row';
     fieldDefs.forEach(f => {
-      const inp = document.createElement('input');
-      inp.type = 'text';
+      const inp = document.createElement(f.type === 'textarea' ? 'textarea' : 'input');
+      if (f.type !== 'textarea') inp.type = 'text';
+      else { inp.rows = 2; }
       inp.placeholder = f.label;
       inp.dataset.field = f.key;
-      inp.value = data[f.key] || '';
+      let val = data[f.key];
+      if (val && typeof val === 'object') {
+        val = val[window.currentLang] || val.ar || val.en || '';
+      }
+      inp.value = val || '';
       row.appendChild(inp);
     });
     const rm = document.createElement('button');
@@ -1610,7 +2066,7 @@ function buildDynamicSection(containerEl, fieldDefs, items, addBtnLabel){
   return function collect(){
     return Array.from(rowsWrap.querySelectorAll('.dyn-row')).map(row => {
       const obj = {};
-      row.querySelectorAll('input').forEach(inp => { obj[inp.dataset.field] = inp.value.trim(); });
+      row.querySelectorAll('input, textarea').forEach(inp => { obj[inp.dataset.field] = inp.value.trim(); });
       return obj;
     }).filter(obj => Object.values(obj).some(v => v));
   };
@@ -1628,6 +2084,8 @@ function loadSwimmerIntoForm(serial){
   document.getElementById('f_age').value = record.age || '';
   document.getElementById('f_height').value = record.height || '';
   document.getElementById('f_weight').value = record.weight || '';
+  document.getElementById('f_vip').checked = !!record.vip;
+
   document.getElementById('f_strengths').value = (record.strengths || []).map(T).join('\n');
   document.getElementById('f_weaknesses').value = (record.weaknesses || []).map(T).join('\n');
   document.getElementById('f_missionTitle').value = T(record.missionTitle) || '';
@@ -1651,24 +2109,61 @@ function loadSwimmerIntoForm(serial){
     skillsWrap.appendChild(row);
   });
 
+  const pbItemsForForm = (record.personalBests || []).map(pb => Object.assign({}, pb, {
+    historyRaw: Array.isArray(pb.history) ? pb.history.map(h => (h.date || '') + ': ' + (h.time || '')).join('\n') : ''
+  }));
   collectPB = buildDynamicSection(document.getElementById('pbSection'),
-    [{key:'event', label:'السباق (مثال: 50m Freestyle)'}, {key:'time', label:'الزمن الحالي'}, {key:'prev', label:'الزمن السابق (اختياري)'}],
-    record.personalBests, '+ إضافة زمن آخر');
+    [
+      {key:'event', label:'السباق (مثال: 50m Freestyle)'},
+      {key:'time', label:'الزمن الحالي'},
+      {key:'prev', label:'الزمن السابق (اختياري)'},
+      {key:'percentile', label:'التصنيف المقارن (مثال: ضمن أفضل 20% للمستوى)'},
+      {key:'historyRaw', label:'سجل التطور (سطر لكل قياس: التاريخ: الزمن)', type:'textarea'}
+    ],
+    pbItemsForForm, '+ إضافة زمن آخر');
 
   collectHistory = buildDynamicSection(document.getElementById('historySection'),
     [{key:'date', label:'التاريخ (YYYY-MM-DD)'}, {key:'level', label:'المستوى'}],
     record.progressHistory, '+ إضافة سجل جديد');
 
-  const notesForForm = (record.coachNotes || []).map(n => Object.assign({}, n, { note: T(n.note) }));
   collectNotes = buildDynamicSection(document.getElementById('notesSection'),
     [{key:'date', label:'التاريخ (YYYY-MM-DD)'}, {key:'note', label:'الملاحظة'}],
-    notesForForm, '+ إضافة ملاحظة');
+    record.coachNotes, '+ إضافة ملاحظة');
 
   collectVideos = buildDynamicSection(document.getElementById('videosSection'),
     [{key:'title', label:'عنوان الفيديو'}, {key:'url', label:'الرابط'}, {key:'date', label:'التاريخ'}, {key:'relatedWeakness', label:'نقطة الضعف المتعلقة'}, {key:'relatedSkill', label:'المهارة المرتبطة (Freestyle/Backstroke/...)'}],
     record.videos, '+ إضافة فيديو');
 
-  document.getElementById('f_levelProgress').value = record.levelProgress != null ? record.levelProgress : '';
+  collectHealthReports = buildDynamicSection(document.getElementById('healthReportsSection'),
+    [
+      {key:'date', label:'تاريخ الجلسة (YYYY-MM-DD)'},
+      {key:'poolLength', label:'مكان التدريب (مثال: مسبح 25م)'},
+      {key:'waterTemp', label:'حرارة الماء (مثال: 27°C)'},
+      {key:'distance', label:'المسافة الكلية (مثال: 1500 m)'},
+      {key:'strokeTypes', label:'أنواع الضربات المستخدمة (مثال: حرة، ظهر، صدر، فراشة)'},
+      {key:'duration', label:'الوقت الإجمالي المنقضي (مثال: 38:20)'},
+      {key:'activeCalories', label:'السعرات الحرارية النشطة (كالوري)'},
+      {key:'totalCalories', label:'السعرات الحرارية الإجمالية (كالوري)'},
+      {key:'avgHr', label:'متوسط نبض القلب (bpm)'},
+      {key:'maxHr', label:'أقصى نبض القلب (bpm)'},
+      {key:'restingHr', label:'نبض الراحة (bpm)'},
+      {key:'laps', label:'عدد الأطوال / اللفات'},
+      {key:'pace', label:'المعدل لكل 100م (مثال: 2:12)'},
+      {key:'swolf', label:'SWOLF'},
+      {key:'strokeCount', label:'متوسط عدد ضربات المعصم لكل طول'},
+      {key:'strokeRate', label:'معدل الضربة (مثال: 38 ضربة/دقيقة)'},
+      {key:'distancePerStroke', label:'المسافة لكل ضربة (مثال: 1.6 م/ضربة)'},
+      {key:'restIntervals', label:'فترات الراحة (مثال: 30 ثانية بين كل مجموعة)'},
+      {key:'hrZone1', label:'% الوقت في المنطقة 1 — إحماء'},
+      {key:'hrZone2', label:'% الوقت في المنطقة 2 — حرق دهون'},
+      {key:'hrZone3', label:'% الوقت في المنطقة 3 — كارديو'},
+      {key:'hrZone4', label:'% الوقت في المنطقة 4 — عالي الشدة'},
+      {key:'hrZone5', label:'% الوقت في المنطقة 5 — أقصى مجهود'},
+      {key:'splits', label:'تفاصيل الأطوال — سطر لكل طول (مثال: 25م 0:17 حرة)', type:'textarea'},
+      {key:'setsBreakdown', label:'تفاصيل سرعة ووقت كل مجموعة/طول على حدة', type:'textarea'},
+      {key:'notes', label:'تحليل الكابتن وملاحظاته على الجلسة', type:'textarea'}
+    ],
+    record.healthReports, '+ إضافة تقرير جلسة سباحة');
 
   updateQR(serial);
   saveStatus.textContent = '';
@@ -1744,7 +2239,6 @@ saveSwimmerBtn.addEventListener('click', async () => {
     height: document.getElementById('f_height').value.trim(),
     weight: document.getElementById('f_weight').value.trim(),
     level: document.getElementById('f_level').value.trim(),
-    levelProgress: document.getElementById('f_levelProgress').value.trim() === '' ? null : parseInt(document.getElementById('f_levelProgress').value, 10),
     strengths: mergeBilingualList(oldRecord.strengths, document.getElementById('f_strengths').value.split('\n').map(s => s.trim()).filter(Boolean)),
     weaknesses: mergeBilingualList(oldRecord.weaknesses, document.getElementById('f_weaknesses').value.split('\n').map(s => s.trim()).filter(Boolean)),
     missionTitle: mergeBilingualScalar(oldRecord.missionTitle, document.getElementById('f_missionTitle').value.trim()),
@@ -1753,10 +2247,23 @@ saveSwimmerBtn.addEventListener('click', async () => {
     nextMissionTitle: mergeBilingualScalar(oldRecord.nextMissionTitle, document.getElementById('f_nextMissionTitle').value.trim()),
     nextMissionText: mergeBilingualScalar(oldRecord.nextMissionText, document.getElementById('f_nextMissionText').value.trim()),
     skills: skills,
-    personalBests: collectPB(),
+    personalBests: collectPB().map(pb => {
+      const out = Object.assign({}, pb);
+      if (out.historyRaw) {
+        out.history = out.historyRaw.split('\n').map(s => s.trim()).filter(Boolean).map(line => {
+          const idx = line.indexOf(':');
+          if (idx === -1) return null;
+          return { date: line.slice(0, idx).trim(), time: line.slice(idx + 1).trim() };
+        }).filter(Boolean);
+      }
+      delete out.historyRaw;
+      return out;
+    }),
     progressHistory: collectHistory(),
     coachNotes: mergeNotesList(oldRecord.coachNotes, collectNotes()),
-    videos: collectVideos()
+    videos: collectVideos(),
+    vip: document.getElementById('f_vip').checked,
+    healthReports: collectHealthReports()
   };
 
   saveSwimmerBtn.disabled = true;
@@ -1903,31 +2410,31 @@ deleteSwimmerBtn.addEventListener('click', async () => {
     if (sectionTitles[1]) sectionTitles[1].textContent = t.personalBests;
     if (sectionTitles[2]) sectionTitles[2].textContent = t.progressHistory;
     if (sectionTitles[3]) sectionTitles[3].textContent = t.coachNote;
-    if (sectionTitles[4]) sectionTitles[4].textContent = t.trainingVideos;
 
-    document.querySelector('.panel.strength h3').textContent = t.strengths;
-    document.querySelector('.panel.weakness h3').textContent = t.weaknesses;
-    document.querySelector('.panel.current .tag').textContent = t.thisLevel;
-    const shareLbl = document.getElementById('shareBtnLabel');
-    if (shareLbl) shareLbl.textContent = (lang === 'en') ? 'Share your progress' : 'شارك تقدمك';
+    const gTwo = document.querySelectorAll('.grid-two h3');
+    if (gTwo[0]) gTwo[0].textContent = t.strengths;
+    if (gTwo[1]) gTwo[1].textContent = t.weaknesses;
 
-    const nextTag = document.querySelector('.panel.next .tag');
-    if (nextTag && nextTag.firstChild) nextTag.firstChild.textContent = t.nextLevel;
+    const mRowTags = document.querySelectorAll('.mission-row .tag');
+    if (mRowTags[0]) mRowTags[0].textContent = t.thisLevel;
+
+    const vTitle = document.querySelector('.videos-panel .section-title');
+    if (vTitle) vTitle.textContent = t.trainingVideos;
 
     document.documentElement.lang = lang;
-    document.documentElement.dir = (lang === 'ar') ? 'rtl' : 'ltr';
+    document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+    window.currentLang = lang;
     localStorage.setItem('laneCardLang', lang);
 
-    window.currentLang = lang;
-    if (typeof window.__rerenderSwimmer === 'function') window.__rerenderSwimmer();
+    if (window.__rerenderSwimmer) window.__rerenderSwimmer();
   }
 
   langBtn.addEventListener('click', () => {
-    const current = localStorage.getItem('laneCardLang') || 'ar';
-    applyLang(current === 'en' ? 'ar' : 'en');
+    const nextLang = window.currentLang === 'ar' ? 'en' : 'ar';
+    applyLang(nextLang);
   });
 
-  applyLang(localStorage.getItem('laneCardLang') || 'ar');
+  applyLang(window.currentLang);
 })();
 </script>
 </body>
